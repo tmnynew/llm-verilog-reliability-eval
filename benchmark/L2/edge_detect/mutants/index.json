@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "LOR",
+    "line": 11,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 11: '&' -> '|'"
+  },
+  {
+    "id": "m002",
+    "op": "URO",
+    "line": 11,
+    "original": "~",
+    "replacement": "",
+    "description": "URO line 11: '~' -> ''"
+  },
+  {
+    "id": "m003",
+    "op": "URO",
+    "line": 12,
+    "original": "~",
+    "replacement": "",
+    "description": "URO line 12: '~' -> ''"
+  },
+  {
+    "id": "m004",
+    "op": "LOR",
+    "line": 12,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 12: '&' -> '|'"
+  },
+  {
+    "id": "m005",
+    "op": "LOR",
+    "line": 13,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 13: '&' -> '|'"
+  },
+  {
+    "id": "m006",
+    "op": "LOR",
+    "line": 13,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 13: '|' -> '&'"
+  },
+  {
+    "id": "m007",
+    "op": "LOR",
+    "line": 13,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 13: '&' -> '|'"
+  },
+  {
+    "id": "m008",
+    "op": "UOI",
+    "line": 16,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 16: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m009",
+    "op": "RST",
+    "line": 16,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 16: '!' -> ''"
+  },
+  {
+    "id": "m010",
+    "op": "SDL",
+    "line": 17,
+    "original": "sig_d <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 17: \"sig_d <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 17,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 17: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m012",
+    "op": "SDL",
+    "line": 18,
+    "original": "pulse <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 18: \"pulse <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 18,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 18: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m014",
+    "op": "SDL",
+    "line": 19,
+    "original": "cnt   <= 8'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 19: \"cnt   <= 8'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m015",
+    "op": "CRP",
+    "line": 19,
+    "original": "8'd0",
+    "replacement": "8'd1",
+    "description": "CRP line 19: \"8'd0\" -> \"8'd1\""
+  },
+  {
+    "id": "m016",
+    "op": "SDL",
+    "line": 21,
+    "original": "sig_d <= sig;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 21: 'sig_d <= sig;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m017",
+    "op": "SDL",
+    "line": 22,
+    "original": "pulse <= det;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 22: 'pulse <= det;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m018",
+    "op": "UOI",
+    "line": 23,
+    "original": "(det)",
+    "replacement": "(!(det))",
+    "description": "UOI line 23: '(det)' -> '(!(det))'"
+  },
+  {
+    "id": "m019",
+    "op": "AOR",
+    "line": 24,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 24: '+' -> '-'"
+  },
+  {
+    "id": "m020",
+    "op": "CRP",
+    "line": 24,
+    "original": "8'd1",
+    "replacement": "8'd2",
+    "description": "CRP line 24: \"8'd1\" -> \"8'd2\""
+  }
+]

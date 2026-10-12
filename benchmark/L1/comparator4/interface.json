@@ -1,0 +1,11 @@
+{
+  "module": "comparator4",
+  "ports": [
+    {"name": "a",      "direction": "input",  "width": 4},
+    {"name": "b",      "direction": "input",  "width": 4},
+    {"name": "signed_mode", "direction": "input", "width": 1},
+    {"name": "gt",     "direction": "output", "width": 1},
+    {"name": "eq",     "direction": "output", "width": 1},
+    {"name": "lt",     "direction": "output", "width": 1}
+  ]
+}

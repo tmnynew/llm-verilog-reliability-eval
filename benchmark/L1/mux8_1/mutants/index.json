@@ -1,0 +1,10 @@
+[
+  {
+    "id": "m001",
+    "op": "CRP",
+    "line": 10,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 10: \"1'b0\" -> \"1'b1\""
+  }
+]

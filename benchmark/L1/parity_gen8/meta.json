@@ -1,0 +1,18 @@
+{
+  "id": "parity_gen8",
+  "level": "L1",
+  "title": "奇偶校验器",
+  "tags": [
+    "combinational",
+    "reduction"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 2,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

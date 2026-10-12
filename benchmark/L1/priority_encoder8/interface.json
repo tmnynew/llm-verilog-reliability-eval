@@ -1,0 +1,8 @@
+{
+  "module": "priority_encoder8",
+  "ports": [
+    {"name": "in",    "direction": "input",  "width": 8},
+    {"name": "idx",   "direction": "output", "width": 3},
+    {"name": "valid", "direction": "output", "width": 1}
+  ]
+}

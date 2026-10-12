@@ -1,0 +1,20 @@
+{
+  "id": "seq_detector_1011",
+  "level": "L2",
+  "title": "序列检测器 1011",
+  "tags": [
+    "sequential",
+    "fsm",
+    "reset"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 2,
+    "FF": 3,
+    "Fmax_MHz": 689.1798759476223
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

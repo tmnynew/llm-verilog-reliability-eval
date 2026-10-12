@@ -1,0 +1,3 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m007  reviewer-A  DDL: case over a 2-bit mode is full (4 arms); default unreachable in simulation.

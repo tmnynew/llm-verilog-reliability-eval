@@ -1,0 +1,2 @@
+m007  reviewer-A  CRP wstrb_r reset 0 -> 1: wstrb_r is always loaded by the W handshake before the write is performed, the reset value is never used.
+m010  reviewer-A  BSR bvalid <= 0 -> bvalid = 0 in the B handshake branch: the following response branch also needs aw_got && w_got, which cannot both be set while bvalid is high because awready/wready are gated by ~bvalid; the blocking assignment therefore never changes the schedule.

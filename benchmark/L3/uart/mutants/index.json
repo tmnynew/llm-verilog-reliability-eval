@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 22,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 22: '3' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "RST",
+    "line": 26,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 26: '!' -> ''"
+  },
+  {
+    "id": "m003",
+    "op": "SDL",
+    "line": 35,
+    "original": "tx_busy    <= 1'b1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 35: \"tx_busy    <= 1'b1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m004",
+    "op": "AOR",
+    "line": 42,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 42: '-' -> '+'"
+  },
+  {
+    "id": "m005",
+    "op": "SDL",
+    "line": 48,
+    "original": "tx_bit_idx <= tx_bit_idx + 1'b1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 48: \"tx_bit_idx <= tx_bit_idx + 1'b1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m006",
+    "op": "BSR",
+    "line": 48,
+    "original": "<=",
+    "replacement": "=",
+    "description": "BSR line 48: '<=' -> '='"
+  },
+  {
+    "id": "m007",
+    "op": "WID",
+    "line": 66,
+    "original": "15",
+    "replacement": "14",
+    "description": "WID line 66: '15' -> '14'"
+  },
+  {
+    "id": "m008",
+    "op": "RST",
+    "line": 71,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 71: '!' -> ''"
+  },
+  {
+    "id": "m009",
+    "op": "SDL",
+    "line": 72,
+    "original": "rx_state   <= RX_IDLE;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 72: 'rx_state   <= RX_IDLE;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m010",
+    "op": "CRP",
+    "line": 86,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 86: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m011",
+    "op": "UOI",
+    "line": 90,
+    "original": "(rx_clk_cnt == (CLKS_PER_BIT / 2) - 1)",
+    "replacement": "(!(rx_clk_cnt == (CLKS_PER_BIT / 2) - 1))",
+    "description": "UOI line 90: '(rx_clk_cnt == (CLKS_PER_BIT / 2) - 1)' -> '(!(rx_clk_cnt == (CLKS_PER_BIT / 2) - 1)'"
+  },
+  {
+    "id": "m012",
+    "op": "ROR",
+    "line": 90,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 90: '==' -> '!='"
+  },
+  {
+    "id": "m013",
+    "op": "AOR",
+    "line": 104,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 104: '+' -> '-'"
+  },
+  {
+    "id": "m014",
+    "op": "ROR",
+    "line": 110,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 110: '==' -> '!='"
+  },
+  {
+    "id": "m015",
+    "op": "AOR",
+    "line": 110,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 110: '-' -> '+'"
+  },
+  {
+    "id": "m016",
+    "op": "UOI",
+    "line": 113,
+    "original": "(rx == 1'b1)",
+    "replacement": "(!(rx == 1'b1))",
+    "description": "UOI line 113: \"(rx == 1'b1)\" -> \"(!(rx == 1'b1))\""
+  },
+  {
+    "id": "m017",
+    "op": "ROR",
+    "line": 113,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 113: '==' -> '!='"
+  },
+  {
+    "id": "m018",
+    "op": "CRP",
+    "line": 115,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 115: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m019",
+    "op": "CRP",
+    "line": 117,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 117: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m020",
+    "op": "DDL",
+    "line": 123,
+    "original": "default: rx_state <= RX_IDLE;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 123: 'default: rx_state <= RX_IDLE;' -> '/* default removed */'"
+  }
+]

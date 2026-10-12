@@ -1,0 +1,130 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 9,
+    "original": "7",
+    "replacement": "6",
+    "description": "WID line 9: '7' -> '6'"
+  },
+  {
+    "id": "m002",
+    "op": "ROR",
+    "line": 10,
+    "original": ">=",
+    "replacement": ">",
+    "description": "ROR line 10: '>=' -> '>'"
+  },
+  {
+    "id": "m003",
+    "op": "AOR",
+    "line": 10,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 10: '-' -> '+'"
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 10,
+    "original": "8'd1",
+    "replacement": "8'd2",
+    "description": "CRP line 10: \"8'd1\" -> \"8'd2\""
+  },
+  {
+    "id": "m005",
+    "op": "UOI",
+    "line": 13,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 13: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m006",
+    "op": "RST",
+    "line": 13,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 13: '!' -> ''"
+  },
+  {
+    "id": "m007",
+    "op": "SDL",
+    "line": 14,
+    "original": "cnt  <= 8'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 14: \"cnt  <= 8'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 14,
+    "original": "8'd0",
+    "replacement": "8'd1",
+    "description": "CRP line 14: \"8'd0\" -> \"8'd1\""
+  },
+  {
+    "id": "m009",
+    "op": "SDL",
+    "line": 15,
+    "original": "tick <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 15: \"tick <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m010",
+    "op": "CRP",
+    "line": 15,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 15: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m011",
+    "op": "SDL",
+    "line": 17,
+    "original": "cnt  <= last ? 8'd0 : cnt + 8'd1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 17: \"cnt  <= last ? 8'd0 : cnt + 8'd1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m012",
+    "op": "CRP",
+    "line": 17,
+    "original": "8'd0",
+    "replacement": "8'd1",
+    "description": "CRP line 17: \"8'd0\" -> \"8'd1\""
+  },
+  {
+    "id": "m013",
+    "op": "AOR",
+    "line": 17,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 17: '+' -> '-'"
+  },
+  {
+    "id": "m014",
+    "op": "CRP",
+    "line": 17,
+    "original": "8'd1",
+    "replacement": "8'd2",
+    "description": "CRP line 17: \"8'd1\" -> \"8'd2\""
+  },
+  {
+    "id": "m015",
+    "op": "SDL",
+    "line": 18,
+    "original": "tick <= last;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 18: 'tick <= last;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m016",
+    "op": "ROR",
+    "line": 22,
+    "original": "<",
+    "replacement": "<=",
+    "description": "ROR line 22: '<' -> '<='"
+  }
+]

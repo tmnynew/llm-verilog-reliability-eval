@@ -1,0 +1,54 @@
+{
+  "source_db": "results.db",
+  "source_db_sha256": "9d0d24b769762f501da8aa06920ec42fca6c38cc7ccb65b265a661e6a9bae571",
+  "samples": 3300,
+  "verdicts": 7715,
+  "models": [
+    [
+      "Model A",
+      "deepseek-v4-pro"
+    ],
+    [
+      "Model B",
+      "qwen3-coder-plus-2025-09-23"
+    ],
+    [
+      "Model C",
+      "glm-5"
+    ],
+    [
+      "Model D",
+      "qwen3-coder-30b-a3b-instruct"
+    ]
+  ],
+  "redaction": [
+    {
+      "placeholder": "<repo>",
+      "meaning": "workspace checkout of this repository"
+    },
+    {
+      "placeholder": "<tmp>",
+      "meaning": "per-sample temporary working directory"
+    },
+    {
+      "placeholder": "<home>",
+      "meaning": "user home directory"
+    },
+    {
+      "placeholder": "<vivado>",
+      "meaning": "Vivado installation directory"
+    },
+    {
+      "placeholder": "<oss-cad-suite>",
+      "meaning": "OSS CAD Suite installation directory"
+    }
+  ],
+  "residual_local_paths": 0,
+  "files": {
+    "README.md": 8413,
+    "samples.csv": 487295,
+    "samples.jsonl": 29861775,
+    "tool_logs.jsonl": 12690200,
+    "verdicts.csv": 964595
+  }
+}

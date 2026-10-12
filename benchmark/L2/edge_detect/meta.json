@@ -1,0 +1,22 @@
+{
+  "id": "edge_detect",
+  "level": "L2",
+  "title": "边沿检测器",
+  "tags": [
+    "sequential",
+    "reset",
+    "edge",
+    "counter",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 9,
+    "FF": 10,
+    "Fmax_MHz": 414.9377593360996
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

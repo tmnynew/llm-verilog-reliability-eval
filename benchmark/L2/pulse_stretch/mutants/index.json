@@ -1,0 +1,106 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 21,
+    "original": "1",
+    "replacement": "2",
+    "description": "WID line 21: '1' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "UOI",
+    "line": 24,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 24: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m003",
+    "op": "RST",
+    "line": 24,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 24: '!' -> ''"
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 25,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 25: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m005",
+    "op": "UOI",
+    "line": 26,
+    "original": "(in)",
+    "replacement": "(!(in))",
+    "description": "UOI line 26: '(in)' -> '(!(in))'"
+  },
+  {
+    "id": "m006",
+    "op": "WID",
+    "line": 27,
+    "original": "1",
+    "replacement": "2",
+    "description": "WID line 27: '1' -> '2'"
+  },
+  {
+    "id": "m007",
+    "op": "UOI",
+    "line": 28,
+    "original": "(remaining != {CW{1'b0}})",
+    "replacement": "(!(remaining != {CW{1'b0}}))",
+    "description": "UOI line 28: \"(remaining != {CW{1'b0}})\" -> \"(!(remaining != {CW{1'b0}}))\""
+  },
+  {
+    "id": "m008",
+    "op": "ROR",
+    "line": 28,
+    "original": "!=",
+    "replacement": "==",
+    "description": "ROR line 28: '!=' -> '=='"
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 28,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 28: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m010",
+    "op": "AOR",
+    "line": 29,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 29: '-' -> '+'"
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 29,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 29: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m012",
+    "op": "ROR",
+    "line": 32,
+    "original": "!=",
+    "replacement": "==",
+    "description": "ROR line 32: '!=' -> '=='"
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 32,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 32: \"1'b0\" -> \"1'b1\""
+  }
+]

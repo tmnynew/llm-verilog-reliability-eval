@@ -1,0 +1,28 @@
+{
+  "module": "mux8_1",
+  "parameters": {
+    "WIDTH": 4
+  },
+  "ports": [
+    {
+      "name": "din",
+      "direction": "input",
+      "width": 32
+    },
+    {
+      "name": "sel",
+      "direction": "input",
+      "width": 3
+    },
+    {
+      "name": "en",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dout",
+      "direction": "output",
+      "width": 4
+    }
+  ]
+}

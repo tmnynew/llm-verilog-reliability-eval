@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 18,
+    "original": "1",
+    "replacement": "0",
+    "description": "WID line 18: '1' -> '0'"
+  },
+  {
+    "id": "m002",
+    "op": "WID",
+    "line": 19,
+    "original": "7",
+    "replacement": "6",
+    "description": "WID line 19: '7' -> '6'"
+  },
+  {
+    "id": "m003",
+    "op": "ROR",
+    "line": 21,
+    "original": "!=",
+    "replacement": "==",
+    "description": "ROR line 21: '!=' -> '=='"
+  },
+  {
+    "id": "m004",
+    "op": "UOI",
+    "line": 25,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 25: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m005",
+    "op": "RST",
+    "line": 25,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 25: '!' -> ''"
+  },
+  {
+    "id": "m006",
+    "op": "CRP",
+    "line": 27,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 27: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m007",
+    "op": "UOI",
+    "line": 40,
+    "original": "(start)",
+    "replacement": "(!(start))",
+    "description": "UOI line 40: '(start)' -> '(!(start))'"
+  },
+  {
+    "id": "m008",
+    "op": "SDL",
+    "line": 43,
+    "original": "len_r <= len;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 43: 'len_r <= len;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m009",
+    "op": "SDL",
+    "line": 44,
+    "original": "idx   <= 8'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 44: \"idx   <= 8'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m010",
+    "op": "UOI",
+    "line": 45,
+    "original": "(len == 8'd0)",
+    "replacement": "(!(len == 8'd0))",
+    "description": "UOI line 45: \"(len == 8'd0)\" -> \"(!(len == 8'd0))\""
+  },
+  {
+    "id": "m011",
+    "op": "ROR",
+    "line": 45,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 45: '==' -> '!='"
+  },
+  {
+    "id": "m012",
+    "op": "CRP",
+    "line": 46,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 46: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m013",
+    "op": "AOR",
+    "line": 56,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 56: '+' -> '-'"
+  },
+  {
+    "id": "m014",
+    "op": "BSR",
+    "line": 59,
+    "original": "<=",
+    "replacement": "=",
+    "description": "BSR line 59: '<=' -> '='"
+  },
+  {
+    "id": "m015",
+    "op": "CRP",
+    "line": 59,
+    "original": "8'd1",
+    "replacement": "8'd2",
+    "description": "CRP line 59: \"8'd1\" -> \"8'd2\""
+  },
+  {
+    "id": "m016",
+    "op": "ROR",
+    "line": 60,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 60: '==' -> '!='"
+  },
+  {
+    "id": "m017",
+    "op": "AOR",
+    "line": 60,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 60: '-' -> '+'"
+  },
+  {
+    "id": "m018",
+    "op": "SDL",
+    "line": 61,
+    "original": "state <= IDLE;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 61: 'state <= IDLE;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m019",
+    "op": "AOR",
+    "line": 66,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 66: '+' -> '-'"
+  },
+  {
+    "id": "m020",
+    "op": "DDL",
+    "line": 69,
+    "original": "default: state <= IDLE;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 69: 'default: state <= IDLE;' -> '/* default removed */'"
+  }
+]

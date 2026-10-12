@@ -1,0 +1,22 @@
+{
+  "id": "uart",
+  "level": "L3",
+  "title": "UART 收发器",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "serial",
+    "reset"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 2,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 56,
+    "FF": 70,
+    "Fmax_MHz": 247.5247524752475
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

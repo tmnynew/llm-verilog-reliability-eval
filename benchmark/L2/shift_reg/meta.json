@@ -1,0 +1,23 @@
+{
+  "id": "shift_reg",
+  "level": "L2",
+  "title": "移位寄存器",
+  "tags": [
+    "sequential",
+    "reset",
+    "shift",
+    "mux",
+    "width",
+    "default-branch"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 0,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 10,
+    "FF": 8,
+    "Fmax_MHz": 610.1281269066504
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

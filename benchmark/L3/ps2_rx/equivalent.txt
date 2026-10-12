@@ -1,0 +1,4 @@
+m002  reviewer-A  WID tmr [15:0] -> [14:0]: TIMEOUT (200) fits in 15 bits, the counter never exceeds TIMEOUT.
+m007  reviewer-A  SDL reset of data removed: the spec leaves the reset value of data unspecified; data is only checked when valid=1.
+m008  reviewer-A  SDL reset of sh removed: bits sh[0..8] are all written by the frame before they are read at the stop bit.
+m009  reviewer-A  CRP tmr reset 0 -> 1: tmr is only evaluated while a frame is in progress and is cleared on every falling edge, so the reset value is never used.

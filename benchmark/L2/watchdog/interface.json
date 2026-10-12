@@ -1,0 +1,33 @@
+{
+  "module": "watchdog",
+  "parameters": {
+    "TIMEOUT": 64
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "enable",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "kick",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "timeout",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

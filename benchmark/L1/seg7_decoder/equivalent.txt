@@ -1,0 +1,4 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m019  reviewer-A  DDL: the case over a 4-bit input is full (16 arms), the default arm is unreachable in simulation. (Synthesis-stage check still flags the missing default → use --kill-on-synth to count it.)
+m020  reviewer-A  CRP on the unreachable default arm value.

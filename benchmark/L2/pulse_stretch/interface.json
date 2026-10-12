@@ -1,0 +1,28 @@
+{
+  "module": "pulse_stretch",
+  "parameters": {
+    "LEN": 8
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "in",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "out",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

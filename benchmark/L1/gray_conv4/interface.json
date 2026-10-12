@@ -1,0 +1,20 @@
+{
+  "module": "gray_conv4",
+  "ports": [
+    {
+      "name": "din",
+      "direction": "input",
+      "width": 4
+    },
+    {
+      "name": "mode",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dout",
+      "direction": "output",
+      "width": 4
+    }
+  ]
+}

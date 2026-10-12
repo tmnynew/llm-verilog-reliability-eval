@@ -1,0 +1,6 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m007  reviewer-A  WID reg [15:0] rx_clk_cnt -> [14:0]: the counter never exceeds CLKS_PER_BIT-1 = 15, so the width is still sufficient.
+m009  reviewer-A  SDL of `rx_state <= RX_IDLE` in the reset branch: the state becomes X during reset, the case default drives it to RX_IDLE at the first non-reset edge, and no output differs; on FPGA the register powers up as 0 = RX_IDLE anyway.
+m015  reviewer-A  AOR in the RX_STOP sample point (CLKS_PER_BIT-1 -> CLKS_PER_BIT+1): the stop bit is sampled 2 cycles later, which is inside the tolerance window the specification grants (0..CLKS_PER_BIT/2 cycles).
+m020  reviewer-A  DDL: the 2-bit rx_state enumerates all four states, so the default arm is unreachable in simulation.

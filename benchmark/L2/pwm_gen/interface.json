@@ -1,0 +1,25 @@
+{
+  "module": "pwm_gen",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "duty",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "pwm",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "bcd_adder",
+  "level": "L1",
+  "title": "BCD 加法器",
+  "tags": [
+    "combinational",
+    "adder",
+    "bcd",
+    "width",
+    "default-branch"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 7,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

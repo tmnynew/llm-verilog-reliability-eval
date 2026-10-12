@@ -1,0 +1,1 @@
+设计一个单字节 I2C 主机 `i2c_master`（7 位地址，开漏输出以 scl_o/sda_o = 1 表示释放总线）：start 有效时发起一次事务——START、地址+读写位、等待从机 ACK，然后写入 wdata 一个字节并等待 ACK，或读出一个字节到 rdata 并回 NACK，最后 STOP；SCL 周期为 4·CLK_DIV 个时钟周期；地址或数据未被应答时置 ack_err 并提前 STOP；结束时 done 输出 1 个周期的脉冲。

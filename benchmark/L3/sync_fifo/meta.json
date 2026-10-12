@@ -1,0 +1,23 @@
+{
+  "id": "sync_fifo",
+  "level": "L3",
+  "title": "同步 FIFO",
+  "tags": [
+    "system",
+    "protocol",
+    "fifo",
+    "pointer",
+    "width",
+    "reset"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 0,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 20,
+    "FF": 21,
+    "Fmax_MHz": 248.8800398208064
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

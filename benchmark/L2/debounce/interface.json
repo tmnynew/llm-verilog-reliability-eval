@@ -1,0 +1,10 @@
+{
+  "module": "debounce",
+  "parameters": {"STABLE_CYCLES": 16},
+  "ports": [
+    {"name": "clk",     "direction": "input",  "width": 1},
+    {"name": "rst_n",   "direction": "input",  "width": 1},
+    {"name": "btn_in",  "direction": "input",  "width": 1},
+    {"name": "btn_out", "direction": "output", "width": 1}
+  ]
+}

@@ -1,0 +1,3 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m006  reviewer-A  WID `wire [4:0] adj` -> `[3:0]`: only adj[3:0] is consumed by `sum`, so dropping the unused MSB cannot change any output.

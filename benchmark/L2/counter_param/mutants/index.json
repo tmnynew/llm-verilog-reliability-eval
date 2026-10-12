@@ -1,0 +1,90 @@
+[
+  {
+    "id": "m001",
+    "op": "LOR",
+    "line": 15,
+    "original": "&&",
+    "replacement": "||",
+    "description": "LOR line 15: '&&' -> '||'"
+  },
+  {
+    "id": "m002",
+    "op": "ROR",
+    "line": 15,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 15: '==' -> '!='"
+  },
+  {
+    "id": "m003",
+    "op": "UOI",
+    "line": 18,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 18: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m004",
+    "op": "RST",
+    "line": 18,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 18: '!' -> ''"
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 19,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 19: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m006",
+    "op": "UOI",
+    "line": 20,
+    "original": "(en)",
+    "replacement": "(!(en))",
+    "description": "UOI line 20: '(en)' -> '(!(en))'"
+  },
+  {
+    "id": "m007",
+    "op": "UOI",
+    "line": 21,
+    "original": "(count == LAST)",
+    "replacement": "(!(count == LAST))",
+    "description": "UOI line 21: '(count == LAST)' -> '(!(count == LAST))'"
+  },
+  {
+    "id": "m008",
+    "op": "ROR",
+    "line": 21,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 21: '==' -> '!='"
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 22,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 22: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m010",
+    "op": "AOR",
+    "line": 24,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 24: '+' -> '-'"
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 24,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 24: \"1'b1\" -> \"1'b0\""
+  }
+]

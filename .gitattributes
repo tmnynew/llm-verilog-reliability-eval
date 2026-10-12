@@ -1,0 +1,5 @@
+# Normalise to LF in the repository (CI and the Docker image run on Linux); Windows checkouts keep LF too.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.db binary

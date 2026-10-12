@@ -1,0 +1,58 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 7,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 7: '3' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 7,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 7: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m003",
+    "op": "WID",
+    "line": 7,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 7: '3' -> '2'"
+  },
+  {
+    "id": "m004",
+    "op": "WID",
+    "line": 8,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 8: '3' -> '2'"
+  },
+  {
+    "id": "m005",
+    "op": "LOR",
+    "line": 10,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 10: '^' -> '|'"
+  },
+  {
+    "id": "m006",
+    "op": "LOR",
+    "line": 11,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 11: '^' -> '|'"
+  },
+  {
+    "id": "m007",
+    "op": "LOR",
+    "line": 12,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 12: '^' -> '|'"
+  }
+]

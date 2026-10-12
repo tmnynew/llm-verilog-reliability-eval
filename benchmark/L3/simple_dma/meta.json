@@ -1,0 +1,21 @@
+{
+  "id": "simple_dma",
+  "level": "L3",
+  "title": "简易 DMA",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "memory"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 2,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 40,
+    "FF": 46,
+    "Fmax_MHz": 235.1281448389372
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

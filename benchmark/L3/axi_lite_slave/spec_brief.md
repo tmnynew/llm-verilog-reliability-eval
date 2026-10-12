@@ -1,0 +1,1 @@
+设计一个 AXI4-Lite 从机 `axi_lite_slave`：实现 4 个 32 位寄存器（偏移 0x00、0x04、0x08 可读写，0x0C 为只读 ID 寄存器，值 0x5A5A0003），写通道支持 wstrb 字节使能，AW 与 W 可以任意先后到达；写只读寄存器返回 SLVERR，访问 0x10～0xFF 返回 DECERR（读数据为 0），其余返回 OKAY；valid/ready 握手须符合 AXI 规则。

@@ -1,0 +1,22 @@
+{
+  "id": "debounce",
+  "level": "L2",
+  "title": "按键消抖",
+  "tags": [
+    "sequential",
+    "counter",
+    "parameter",
+    "reset",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 6,
+    "FF": 5,
+    "Fmax_MHz": 355.4923569143263
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

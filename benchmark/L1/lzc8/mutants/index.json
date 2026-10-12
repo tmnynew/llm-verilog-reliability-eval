@@ -1,0 +1,106 @@
+[
+  {
+    "id": "m001",
+    "op": "ROR",
+    "line": 7,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 7: '==' -> '!='"
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 7,
+    "original": "8'd0",
+    "replacement": "8'd1",
+    "description": "CRP line 7: \"8'd0\" -> \"8'd1\""
+  },
+  {
+    "id": "m003",
+    "op": "CRP",
+    "line": 11,
+    "original": "4'd0",
+    "replacement": "4'd1",
+    "description": "CRP line 11: \"4'd0\" -> \"4'd1\""
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 12,
+    "original": "4'd1",
+    "replacement": "4'd2",
+    "description": "CRP line 12: \"4'd1\" -> \"4'd2\""
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 13,
+    "original": "4'd2",
+    "replacement": "4'd3",
+    "description": "CRP line 13: \"4'd2\" -> \"4'd3\""
+  },
+  {
+    "id": "m006",
+    "op": "CRP",
+    "line": 14,
+    "original": "4'd3",
+    "replacement": "4'd4",
+    "description": "CRP line 14: \"4'd3\" -> \"4'd4\""
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 15,
+    "original": "4'd4",
+    "replacement": "4'd5",
+    "description": "CRP line 15: \"4'd4\" -> \"4'd5\""
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 16,
+    "original": "4'd5",
+    "replacement": "4'd6",
+    "description": "CRP line 16: \"4'd5\" -> \"4'd6\""
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 17,
+    "original": "4'd6",
+    "replacement": "4'd7",
+    "description": "CRP line 17: \"4'd6\" -> \"4'd7\""
+  },
+  {
+    "id": "m010",
+    "op": "CRP",
+    "line": 18,
+    "original": "8'b0000_0001",
+    "replacement": "8'b0",
+    "description": "CRP line 18: \"8'b0000_0001\" -> \"8'b0\""
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 18,
+    "original": "4'd7",
+    "replacement": "4'd8",
+    "description": "CRP line 18: \"4'd7\" -> \"4'd8\""
+  },
+  {
+    "id": "m012",
+    "op": "DDL",
+    "line": 19,
+    "original": "default:      count = 4'd8;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 19: \"default:      count = 4'd8;\" -> '/* default removed */'"
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 19,
+    "original": "4'd8",
+    "replacement": "4'd9",
+    "description": "CRP line 19: \"4'd8\" -> \"4'd9\""
+  }
+]

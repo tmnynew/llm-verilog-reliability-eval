@@ -1,0 +1,74 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 11,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 11: '3' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "LOR",
+    "line": 11,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 11: '^' -> '|'"
+  },
+  {
+    "id": "m003",
+    "op": "WID",
+    "line": 11,
+    "original": "2",
+    "replacement": "1",
+    "description": "WID line 11: '2' -> '1'"
+  },
+  {
+    "id": "m004",
+    "op": "WID",
+    "line": 12,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 12: '3' -> '2'"
+  },
+  {
+    "id": "m005",
+    "op": "LOR",
+    "line": 12,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 12: '^' -> '|'"
+  },
+  {
+    "id": "m006",
+    "op": "WID",
+    "line": 12,
+    "original": "2",
+    "replacement": "1",
+    "description": "WID line 12: '2' -> '1'"
+  },
+  {
+    "id": "m007",
+    "op": "ROR",
+    "line": 14,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 14: '==' -> '!='"
+  },
+  {
+    "id": "m008",
+    "op": "ROR",
+    "line": 15,
+    "original": ">",
+    "replacement": ">=",
+    "description": "ROR line 15: '>' -> '>='"
+  },
+  {
+    "id": "m009",
+    "op": "ROR",
+    "line": 16,
+    "original": "<",
+    "replacement": "<=",
+    "description": "ROR line 16: '<' -> '<='"
+  }
+]

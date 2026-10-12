@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "CRP",
+    "line": 8,
+    "original": "4'h0",
+    "replacement": "4'h1",
+    "description": "CRP line 8: \"4'h0\" -> \"4'h1\""
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 9,
+    "original": "7'b111_1001",
+    "replacement": "7'b1111000",
+    "description": "CRP line 9: \"7'b111_1001\" -> \"7'b1111000\""
+  },
+  {
+    "id": "m003",
+    "op": "CRP",
+    "line": 10,
+    "original": "4'h2",
+    "replacement": "4'h3",
+    "description": "CRP line 10: \"4'h2\" -> \"4'h3\""
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 11,
+    "original": "4'h3",
+    "replacement": "4'h2",
+    "description": "CRP line 11: \"4'h3\" -> \"4'h2\""
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 12,
+    "original": "4'h4",
+    "replacement": "4'h5",
+    "description": "CRP line 12: \"4'h4\" -> \"4'h5\""
+  },
+  {
+    "id": "m006",
+    "op": "CRP",
+    "line": 14,
+    "original": "4'h6",
+    "replacement": "4'h7",
+    "description": "CRP line 14: \"4'h6\" -> \"4'h7\""
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 14,
+    "original": "7'b000_0010",
+    "replacement": "7'b11",
+    "description": "CRP line 14: \"7'b000_0010\" -> \"7'b11\""
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 15,
+    "original": "4'h7",
+    "replacement": "4'h6",
+    "description": "CRP line 15: \"4'h7\" -> \"4'h6\""
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 15,
+    "original": "7'b111_1000",
+    "replacement": "7'b1111001",
+    "description": "CRP line 15: \"7'b111_1000\" -> \"7'b1111001\""
+  },
+  {
+    "id": "m010",
+    "op": "CRP",
+    "line": 17,
+    "original": "7'b001_0000",
+    "replacement": "7'b10001",
+    "description": "CRP line 17: \"7'b001_0000\" -> \"7'b10001\""
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 18,
+    "original": "4'hA",
+    "replacement": "4'hb",
+    "description": "CRP line 18: \"4'hA\" -> \"4'hb\""
+  },
+  {
+    "id": "m012",
+    "op": "CRP",
+    "line": 19,
+    "original": "7'b000_0011",
+    "replacement": "7'b10",
+    "description": "CRP line 19: \"7'b000_0011\" -> \"7'b10\""
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 20,
+    "original": "4'hC",
+    "replacement": "4'hd",
+    "description": "CRP line 20: \"4'hC\" -> \"4'hd\""
+  },
+  {
+    "id": "m014",
+    "op": "CRP",
+    "line": 20,
+    "original": "7'b100_0110",
+    "replacement": "7'b1000111",
+    "description": "CRP line 20: \"7'b100_0110\" -> \"7'b1000111\""
+  },
+  {
+    "id": "m015",
+    "op": "CRP",
+    "line": 21,
+    "original": "4'hD",
+    "replacement": "4'hc",
+    "description": "CRP line 21: \"4'hD\" -> \"4'hc\""
+  },
+  {
+    "id": "m016",
+    "op": "CRP",
+    "line": 22,
+    "original": "4'hE",
+    "replacement": "4'hf",
+    "description": "CRP line 22: \"4'hE\" -> \"4'hf\""
+  },
+  {
+    "id": "m017",
+    "op": "CRP",
+    "line": 22,
+    "original": "7'b000_0110",
+    "replacement": "7'b111",
+    "description": "CRP line 22: \"7'b000_0110\" -> \"7'b111\""
+  },
+  {
+    "id": "m018",
+    "op": "CRP",
+    "line": 23,
+    "original": "7'b000_1110",
+    "replacement": "7'b1111",
+    "description": "CRP line 23: \"7'b000_1110\" -> \"7'b1111\""
+  },
+  {
+    "id": "m019",
+    "op": "DDL",
+    "line": 24,
+    "original": "default: seg = 7'b111_1111;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 24: \"default: seg = 7'b111_1111;\" -> '/* default removed */'"
+  },
+  {
+    "id": "m020",
+    "op": "CRP",
+    "line": 24,
+    "original": "7'b111_1111",
+    "replacement": "7'b1111110",
+    "description": "CRP line 24: \"7'b111_1111\" -> \"7'b1111110\""
+  }
+]

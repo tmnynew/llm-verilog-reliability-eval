@@ -1,0 +1,35 @@
+{
+  "module": "bcd_adder",
+  "ports": [
+    {
+      "name": "a",
+      "direction": "input",
+      "width": 4
+    },
+    {
+      "name": "b",
+      "direction": "input",
+      "width": 4
+    },
+    {
+      "name": "cin",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "sum",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "cout",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "invalid",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

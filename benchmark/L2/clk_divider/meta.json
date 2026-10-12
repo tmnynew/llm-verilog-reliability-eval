@@ -1,0 +1,22 @@
+{
+  "id": "clk_divider",
+  "level": "L2",
+  "title": "可编程分频器",
+  "tags": [
+    "sequential",
+    "reset",
+    "counter",
+    "divider",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 19,
+    "FF": 9,
+    "Fmax_MHz": 211.72983273343215
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

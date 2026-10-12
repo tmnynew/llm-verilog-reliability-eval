@@ -1,0 +1,22 @@
+{
+  "id": "pulse_stretch",
+  "level": "L2",
+  "title": "脉冲展宽器",
+  "tags": [
+    "sequential",
+    "reset",
+    "counter",
+    "parameter",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 5,
+    "FF": 4,
+    "Fmax_MHz": 674.308833445718
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

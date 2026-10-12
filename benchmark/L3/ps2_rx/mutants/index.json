@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 14,
+    "original": "1",
+    "replacement": "0",
+    "description": "WID line 14: '1' -> '0'"
+  },
+  {
+    "id": "m002",
+    "op": "WID",
+    "line": 17,
+    "original": "15",
+    "replacement": "14",
+    "description": "WID line 17: '15' -> '14'"
+  },
+  {
+    "id": "m003",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m004",
+    "op": "URO",
+    "line": 19,
+    "original": "~",
+    "replacement": "",
+    "description": "URO line 19: '~' -> ''"
+  },
+  {
+    "id": "m005",
+    "op": "RST",
+    "line": 23,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 23: '!' -> ''"
+  },
+  {
+    "id": "m006",
+    "op": "RST",
+    "line": 33,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 33: '!' -> ''"
+  },
+  {
+    "id": "m007",
+    "op": "SDL",
+    "line": 37,
+    "original": "data    <= 8'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 37: \"data    <= 8'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m008",
+    "op": "SDL",
+    "line": 38,
+    "original": "sh      <= 9'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 38: \"sh      <= 9'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 39,
+    "original": "16'd0",
+    "replacement": "16'd1",
+    "description": "CRP line 39: \"16'd0\" -> \"16'd1\""
+  },
+  {
+    "id": "m010",
+    "op": "UOI",
+    "line": 45,
+    "original": "(bit_cnt == 4'd0)",
+    "replacement": "(!(bit_cnt == 4'd0))",
+    "description": "UOI line 45: \"(bit_cnt == 4'd0)\" -> \"(!(bit_cnt == 4'd0))\""
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 45,
+    "original": "4'd0",
+    "replacement": "4'd1",
+    "description": "CRP line 45: \"4'd0\" -> \"4'd1\""
+  },
+  {
+    "id": "m012",
+    "op": "UOI",
+    "line": 49,
+    "original": "(din == 1'b1 && (^sh) == 1'b1)",
+    "replacement": "(!(din == 1'b1 && (^sh) == 1'b1))",
+    "description": "UOI line 49: \"(din == 1'b1 && (^sh) == 1'b1)\" -> \"(!(din == 1'b1 && (^sh) == 1'b1))\""
+  },
+  {
+    "id": "m013",
+    "op": "ROR",
+    "line": 49,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 49: '==' -> '!='"
+  },
+  {
+    "id": "m014",
+    "op": "LOR",
+    "line": 49,
+    "original": "&&",
+    "replacement": "||",
+    "description": "LOR line 49: '&&' -> '||'"
+  },
+  {
+    "id": "m015",
+    "op": "URO",
+    "line": 49,
+    "original": "^",
+    "replacement": "|",
+    "description": "URO line 49: '^' -> '|'"
+  },
+  {
+    "id": "m016",
+    "op": "ROR",
+    "line": 49,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 49: '==' -> '!='"
+  },
+  {
+    "id": "m017",
+    "op": "CRP",
+    "line": 49,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 49: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m018",
+    "op": "AOR",
+    "line": 57,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 57: '+' -> '-'"
+  },
+  {
+    "id": "m019",
+    "op": "ROR",
+    "line": 60,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 60: '==' -> '!='"
+  },
+  {
+    "id": "m020",
+    "op": "AOR",
+    "line": 64,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 64: '+' -> '-'"
+  }
+]

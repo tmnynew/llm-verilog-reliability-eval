@@ -1,0 +1,35 @@
+{
+  "module": "edge_detect",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "sig",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "mode",
+      "direction": "input",
+      "width": 2
+    },
+    {
+      "name": "pulse",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "cnt",
+      "direction": "output",
+      "width": 8
+    }
+  ]
+}

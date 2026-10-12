@@ -1,0 +1,20 @@
+{
+  "id": "lzc8",
+  "level": "L1",
+  "title": "前导零计数",
+  "tags": [
+    "combinational",
+    "encoder",
+    "width",
+    "default-branch"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 7,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

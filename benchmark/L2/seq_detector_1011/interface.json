@@ -1,0 +1,9 @@
+{
+  "module": "seq_detector_1011",
+  "ports": [
+    {"name": "clk",   "direction": "input",  "width": 1},
+    {"name": "rst_n", "direction": "input",  "width": 1},
+    {"name": "din",   "direction": "input",  "width": 1},
+    {"name": "det",   "direction": "output", "width": 1}
+  ]
+}

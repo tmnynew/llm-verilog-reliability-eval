@@ -1,0 +1,45 @@
+{
+  "module": "rv32_datapath",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "instr",
+      "direction": "input",
+      "width": 32
+    },
+    {
+      "name": "valid",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "alu_result",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "illegal",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "dbg_addr",
+      "direction": "input",
+      "width": 5
+    },
+    {
+      "name": "dbg_data",
+      "direction": "output",
+      "width": 32
+    }
+  ]
+}

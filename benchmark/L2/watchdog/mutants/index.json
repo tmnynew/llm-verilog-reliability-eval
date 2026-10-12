@@ -1,0 +1,130 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 23,
+    "original": "1",
+    "replacement": "2",
+    "description": "WID line 23: '1' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "UOI",
+    "line": 26,
+    "original": "(!rst_n || !enable || kick)",
+    "replacement": "(!(!rst_n || !enable || kick))",
+    "description": "UOI line 26: '(!rst_n || !enable || kick)' -> '(!(!rst_n || !enable || kick))'"
+  },
+  {
+    "id": "m003",
+    "op": "RST",
+    "line": 26,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 26: '!' -> ''"
+  },
+  {
+    "id": "m004",
+    "op": "LOR",
+    "line": 26,
+    "original": "||",
+    "replacement": "&&",
+    "description": "LOR line 26: '||' -> '&&'"
+  },
+  {
+    "id": "m005",
+    "op": "LOR",
+    "line": 26,
+    "original": "||",
+    "replacement": "&&",
+    "description": "LOR line 26: '||' -> '&&'"
+  },
+  {
+    "id": "m006",
+    "op": "SDL",
+    "line": 27,
+    "original": "cnt     <= {CW{1'b0}};",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 27: \"cnt     <= {CW{1'b0}};\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 27,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 27: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m008",
+    "op": "SDL",
+    "line": 28,
+    "original": "timeout <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 28: \"timeout <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 28,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 28: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m010",
+    "op": "UOI",
+    "line": 29,
+    "original": "(cnt == LAST)",
+    "replacement": "(!(cnt == LAST))",
+    "description": "UOI line 29: '(cnt == LAST)' -> '(!(cnt == LAST))'"
+  },
+  {
+    "id": "m011",
+    "op": "ROR",
+    "line": 29,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 29: '==' -> '!='"
+  },
+  {
+    "id": "m012",
+    "op": "SDL",
+    "line": 30,
+    "original": "timeout <= 1'b1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 30: \"timeout <= 1'b1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 30,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 30: \"1'b1\" -> \"1'b0\""
+  },
+  {
+    "id": "m014",
+    "op": "SDL",
+    "line": 32,
+    "original": "cnt <= cnt + 1'b1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 32: \"cnt <= cnt + 1'b1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m015",
+    "op": "AOR",
+    "line": 32,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 32: '+' -> '-'"
+  },
+  {
+    "id": "m016",
+    "op": "CRP",
+    "line": 32,
+    "original": "1'b1",
+    "replacement": "1'b0",
+    "description": "CRP line 32: \"1'b1\" -> \"1'b0\""
+  }
+]

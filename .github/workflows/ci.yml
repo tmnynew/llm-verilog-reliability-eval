@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  unit:
+    name: Unit tests (no EDA tools)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[dev,stats]"
+      - run: ruff check vleval tests scripts
+      - run: pytest -q -m "not eda"
+
+  benchmark:
+    name: Golden models, testbenches and mutation score
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install EDA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends iverilog verilator yosys
+          verilator --version && iverilog -V | head -1 && yosys -V
+      - run: pip install -e ".[dev,stats]"
+      - name: Static + golden validation (Verilator sim, Verilator lint, Yosys pre-screen)
+        run: vleval validate --sim
+      - name: Mutation score >= 95 % for every ready problem
+        run: vleval mutation-score
+      - name: Weak testbenches (Exp. 2) within the 40-85 % target, golden passes each one
+        run: vleval mutation-score --tb weak --levels L2,L3
+      - name: Offline pipeline self-test (golden oracle, all pass)
+        run: |
+          vleval run --oracle --n 1 --repair 0 --db results/selftest.db
+          vleval report --db results/selftest.db --out results/selftest
+      - name: Offline failure-path self-test (mutant oracle, repair loop exercised)
+        run: vleval run --oracle-mutant m001 --n 1 --repair 1 --db results/mutant.db --problem counter_param,sync_fifo || true
+      - run: pytest -q -m eda
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selftest-report
+          path: results/selftest

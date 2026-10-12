@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+
+# Secrets and local configuration
+configs/models.yaml
+.env
+
+# Experiment outputs (the paper's results are published as a text snapshot in data/, see data/README.md)
+results/
+*.db
+*.sqlite
+
+# EDA tool artefacts
+obj_dir/
+*.vvp
+*.vcd
+*.log
+*.jou
+vivado*.backup.*
+.Xil/

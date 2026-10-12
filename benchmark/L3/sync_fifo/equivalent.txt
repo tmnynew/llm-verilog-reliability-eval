@@ -1,0 +1,3 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m020  reviewer-A  DDL of `default: count <= count;` inside a clocked block: a register that is not assigned keeps its value, so the removed arm is semantically identical.

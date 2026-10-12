@@ -1,0 +1,100 @@
+{
+  "module": "axi_lite_slave",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "awvalid",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "awaddr",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "awready",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "wvalid",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "wdata",
+      "direction": "input",
+      "width": 32
+    },
+    {
+      "name": "wstrb",
+      "direction": "input",
+      "width": 4
+    },
+    {
+      "name": "wready",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "bvalid",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "bresp",
+      "direction": "output",
+      "width": 2
+    },
+    {
+      "name": "bready",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "arvalid",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "araddr",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "arready",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "rvalid",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "rdata",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "rresp",
+      "direction": "output",
+      "width": 2
+    },
+    {
+      "name": "rready",
+      "direction": "input",
+      "width": 1
+    }
+  ]
+}
