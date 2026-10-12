@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 
@@ -283,7 +284,7 @@ def cmd_web(args) -> int:
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(prog="vleval", description="LLM-generated Verilog reliability evaluation platform")
     ap.add_argument("--benchmark", help="path to benchmark/ (default: auto-detect)")
-    ap.add_argument("--tools", default="configs/tools.yaml", help="tool configuration YAML")
+    ap.add_argument("--tools", default=os.environ.get("VLEVAL_TOOLS", "configs/tools.yaml"), help="tool configuration YAML (default: $VLEVAL_TOOLS or configs/tools.yaml)")
     ap.add_argument("--vivado", action="store_true", help="enable Vivado as the authoritative synthesis judge")
     ap.add_argument("-v", "--verbose", action="store_true")
     sub = ap.add_subparsers(dest="cmd", required=True)

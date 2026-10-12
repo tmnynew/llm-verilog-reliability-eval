@@ -16,6 +16,8 @@ COPY benchmark ./benchmark
 COPY configs ./configs
 RUN python3 -m venv /venv && /venv/bin/pip install --no-cache-dir -e ".[stats,figures,web]"
 ENV PATH="/venv/bin:${PATH}"
+# Tool configuration (Icarus simulation, Verilator lint, Yosys pre-screen) regardless of the CWD.
+ENV VLEVAL_TOOLS=/app/configs/tools.yaml
 
 # Sanity check at build time: goldens pass, mutation score above threshold.
 RUN vleval validate --sim && vleval mutation-score

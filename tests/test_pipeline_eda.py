@@ -1,5 +1,6 @@
 """Integration tests that need a simulator (Icarus or Verilator). Skipped otherwise."""
 
+import os
 from pathlib import Path
 
 import pytest
@@ -19,7 +20,9 @@ pytestmark = [requires_eda, pytest.mark.eda]
 
 @pytest.fixture(scope="module")
 def judge() -> Judge:
-    cfg = ToolConfig(enable_yosys=True)
+    # $VLEVAL_TOOLS lets CI / Docker use configs/tools.yaml (Icarus simulation, Verilator lint).
+    path = os.environ.get("VLEVAL_TOOLS")
+    cfg = ToolConfig.from_yaml(Path(path)) if path and Path(path).exists() else ToolConfig(enable_yosys=True)
     return Judge(cfg)
 
 

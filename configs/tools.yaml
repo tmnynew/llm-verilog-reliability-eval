@@ -6,8 +6,14 @@ vvp: vvp
 yosys: yosys
 vivado: vivado
 
-# verilator | iverilog | auto (prefer Verilator; Icarus is a fallback without lint)
-simulator: auto
+# Functional simulation: verilator | iverilog | auto (auto prefers Verilator).
+# The paper's data was produced with Icarus Verilog 14 as the simulator and Verilator 5
+# as the linter / Verilog-2001 compile checker; the testbenches are validated against
+# both, but distro Verilator builds older than 5.03x may differ on the L3 bus models,
+# so Icarus is the pinned default.
+simulator: iverilog
+# Lint / compile check: verilator | iverilog | auto
+linter: verilator
 
 # Timeouts (seconds). Paper §2.3 ④: functional simulation 60 s.
 sim_timeout_s: 60

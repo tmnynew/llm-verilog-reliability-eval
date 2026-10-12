@@ -21,6 +21,10 @@ jobs:
   benchmark:
     name: Golden models, testbenches and mutation score
     runs-on: ubuntu-latest
+    env:
+      # Same tool configuration for the CLI and the pytest EDA fixture: Icarus Verilog for
+      # functional simulation (as for the paper's data), Verilator for lint, Yosys pre-screen.
+      VLEVAL_TOOLS: configs/tools.yaml
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,7 +36,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends iverilog verilator yosys
           verilator --version && iverilog -V | head -1 && yosys -V
       - run: pip install -e ".[dev,stats]"
-      - name: Static + golden validation (Verilator sim, Verilator lint, Yosys pre-screen)
+      - name: Static + golden validation (Icarus sim, Verilator lint, Yosys pre-screen)
         run: vleval validate --sim
       - name: Mutation score >= 95 % for every ready problem
         run: vleval mutation-score

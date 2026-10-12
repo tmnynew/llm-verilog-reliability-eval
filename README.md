@@ -14,12 +14,12 @@ git clone https://github.com/tmnynew/llm-verilog-reliability-eval.git && cd llm-
 pip install -e ".[all]"          # 或最小安装 pip install -e .
 ```
 
-EDA 工具（任选其一做仿真，Yosys 可选，Vivado 可选）：
+EDA 工具（仿真器与 Lint 器在 `configs/tools.yaml` 中配置，Yosys 可选，Vivado 可选）：
 
 | 工具 | 用途 | 安装 |
 |---|---|---|
-| Icarus Verilog ≥ 11 | 功能仿真（fallback，无 Lint） | `apt install iverilog` |
-| Verilator ≥ 5.0 | 功能仿真 + Lint（推荐） | `apt install verilator` |
+| Icarus Verilog ≥ 11 | 功能仿真（默认；论文数据用 14） | `apt install iverilog` |
+| Verilator ≥ 5.0 | Lint / Verilog-2001 编译检查（默认），也可改作仿真器（`simulator: verilator`） | `apt install verilator` |
 | Yosys ≥ 0.33 | 可综合性/锁存器秒级预筛 | `apt install yosys` |
 | Vivado 2022+ | 权威综合、资源与 Fmax | Xilinx 官方 |
 
