@@ -71,7 +71,7 @@ vleval --vivado reference
 论文第 4 节的表 5～表 8、图 3～图 6 以及正文引用的全部数字都可由 `data/` 中的快照或原始结果库重新算出：
 
 ```bash
-# 原始结果库 results.db 见 GitHub Release v1.0-paper 附件（SHA-256 见 data/manifest.json）
+# 原始结果库 results.db 见 GitHub Release v1.0-paper 附件 results.db.zip，解压到 results/（SHA-256 见 data/manifest.json）
 python scripts/paper_stats.py --db results/results.db --out data/report   # → paper_stats.txt（§4 全部数字）+ paper_data.json
 python scripts/make_paper_figures.py                                     # → figures/fig1～fig6（读 data/report/paper_data.json）
 vleval report --db results/results.db --out results/report               # → tables.md（表 5～8 的平台版本，口径与论文一致）
