@@ -32,30 +32,38 @@ module tb_i2c_master;
     always @(negedge clk) cyc = cyc + 1;
 
     // ---------------- slave model: address SLV, one data register ----------------
+    // Clocked at negedge clk with edge detection on the bus lines (the DUT drives scl_o/sda_o at
+    // posedge clk, half a cycle earlier), so the model is race-free across simulators.
     reg [7:0] slv_mem = 0, s_sh = 0, s_addr_byte = 0;
     reg       slv_nack_data = 0, s_rw = 0, master_ack = 1;
     integer   s_state = 0, s_bit = 0, starts = 0, stops = 0, addr_seen = 0, wr_cnt = 0;
-    always @(negedge sda_i) if (rst_n && scl === 1'b1) begin starts = starts + 1; s_state = 1; s_bit = 0; sda_slv = 1; end
-    always @(posedge sda_i) if (rst_n && scl === 1'b1) begin stops = stops + 1; s_state = 0; sda_slv = 1; end
-    always @(posedge scl) if (rst_n) case (s_state)
-        1, 3: begin s_sh = {s_sh[6:0], sda_i}; s_bit = s_bit + 1; end
-        6:    master_ack = sda_i;
-        default: ;
-    endcase
-    always @(negedge scl) if (rst_n) case (s_state)
-        1: if (s_bit == 8) begin
-               s_addr_byte = s_sh; addr_seen = addr_seen + 1;
-               if (s_sh[7:1] == SLV) begin sda_slv = 0; s_rw = s_sh[0]; s_state = 2; end else s_state = 9;
-           end
-        2: if (s_rw) begin s_sh = slv_mem; sda_slv = s_sh[7]; s_bit = 1; s_state = 5; end
-           else begin sda_slv = 1; s_bit = 0; s_state = 3; end
-        3: if (s_bit == 8) begin slv_mem = s_sh; wr_cnt = wr_cnt + 1; sda_slv = slv_nack_data; s_state = 4; end
-        4: begin sda_slv = 1; s_state = 9; end
-        5: if (s_bit == 8) begin sda_slv = 1; s_state = 6; end
-           else begin s_sh = {s_sh[6:0], 1'b0}; sda_slv = s_sh[7]; s_bit = s_bit + 1; end
-        6: s_state = 9;
-        default: ;
-    endcase
+    reg       scl_q = 1, sda_q = 1;
+    always @(negedge clk) begin
+        if (rst_n) begin
+            if (scl === 1'b1 && sda_q === 1'b1 && sda_i === 1'b0) begin starts = starts + 1; s_state = 1; s_bit = 0; sda_slv = 1; end   // START
+            if (scl === 1'b1 && sda_q === 1'b0 && sda_i === 1'b1) begin stops = stops + 1; s_state = 0; sda_slv = 1; end     // STOP
+            if (scl_q === 1'b0 && scl === 1'b1) case (s_state)                                                              // SCL rise
+                1, 3: begin s_sh = {s_sh[6:0], sda_i}; s_bit = s_bit + 1; end
+                6:    master_ack = sda_i;
+                default: ;
+            endcase
+            if (scl_q === 1'b1 && scl === 1'b0) case (s_state)                                                              // SCL fall
+                1: if (s_bit == 8) begin
+                       s_addr_byte = s_sh; addr_seen = addr_seen + 1;
+                       if (s_sh[7:1] == SLV) begin sda_slv = 0; s_rw = s_sh[0]; s_state = 2; end else s_state = 9;
+                   end
+                2: if (s_rw) begin s_sh = slv_mem; sda_slv = s_sh[7]; s_bit = 1; s_state = 5; end
+                   else begin sda_slv = 1; s_bit = 0; s_state = 3; end
+                3: if (s_bit == 8) begin slv_mem = s_sh; wr_cnt = wr_cnt + 1; sda_slv = slv_nack_data; s_state = 4; end
+                4: begin sda_slv = 1; s_state = 9; end
+                5: if (s_bit == 8) begin sda_slv = 1; s_state = 6; end
+                   else begin s_sh = {s_sh[6:0], 1'b0}; sda_slv = s_sh[7]; s_bit = s_bit + 1; end
+                6: s_state = 9;
+                default: ;
+            endcase
+        end
+        scl_q = scl; sda_q = sda_i;
+    end
 
     // ---------------- protocol / timing monitor ----------------
     integer hi_changes = 0, scl_rises = 0, last_rise = -1, bad_timing = 0, done_cnt = 0, wide = 0;

@@ -34,22 +34,28 @@ module tb_i2c_master;
     integer n_checks = 0, n_fail = 0, seed = `SEED, t, done_cnt = 0;
     always @(negedge clk) if (done === 1'b1) done_cnt = done_cnt + 1;
 
-    // minimal slave model: ACKs address SLV and one data byte
+    // minimal slave model: ACKs address SLV and one data byte (clocked at negedge clk, edge-detected, race-free)
     reg [7:0] s_sh = 0, s_addr_byte = 0, slv_mem = 0;
     integer   s_state = 0, s_bit = 0;
-    always @(negedge sda_i) if (rst_n && scl === 1'b1) begin s_state = 1; s_bit = 0; sda_slv = 1; end
-    always @(posedge sda_i) if (rst_n && scl === 1'b1) begin s_state = 0; sda_slv = 1; end
-    always @(posedge scl) if (rst_n && (s_state == 1 || s_state == 3)) begin s_sh = {s_sh[6:0], sda_i}; s_bit = s_bit + 1; end
-    always @(negedge scl) if (rst_n) case (s_state)
-        1: if (s_bit == 8) begin
-               s_addr_byte = s_sh;
-               if (s_sh[7:1] == SLV) begin sda_slv = 0; s_state = 2; end else s_state = 9;
-           end
-        2: begin sda_slv = 1; s_bit = 0; s_state = 3; end
-        3: if (s_bit == 8) begin slv_mem = s_sh; sda_slv = 0; s_state = 4; end
-        4: begin sda_slv = 1; s_state = 9; end
-        default: ;
-    endcase
+    reg       scl_q = 1, sda_q = 1;
+    always @(negedge clk) begin
+        if (rst_n) begin
+            if (scl === 1'b1 && sda_q === 1'b1 && sda_i === 1'b0) begin s_state = 1; s_bit = 0; sda_slv = 1; end   // START
+            if (scl === 1'b1 && sda_q === 1'b0 && sda_i === 1'b1) begin s_state = 0; sda_slv = 1; end            // STOP
+            if (scl_q === 1'b0 && scl === 1'b1 && (s_state == 1 || s_state == 3)) begin s_sh = {s_sh[6:0], sda_i}; s_bit = s_bit + 1; end
+            if (scl_q === 1'b1 && scl === 1'b0) case (s_state)
+                1: if (s_bit == 8) begin
+                       s_addr_byte = s_sh;
+                       if (s_sh[7:1] == SLV) begin sda_slv = 0; s_state = 2; end else s_state = 9;
+                   end
+                2: begin sda_slv = 1; s_bit = 0; s_state = 3; end
+                3: if (s_bit == 8) begin slv_mem = s_sh; sda_slv = 0; s_state = 4; end
+                4: begin sda_slv = 1; s_state = 9; end
+                default: ;
+            endcase
+        end
+        scl_q = scl; sda_q = sda_i;
+    end
 
     initial begin
         rst_n = 0; start = 0;
