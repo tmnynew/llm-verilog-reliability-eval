@@ -1,0 +1,11 @@
+{
+  "module": "counter_param",
+  "parameters": {"WIDTH": 8, "MOD": 200},
+  "ports": [
+    {"name": "clk",   "direction": "input",  "width": 1},
+    {"name": "rst_n", "direction": "input",  "width": 1},
+    {"name": "en",    "direction": "input",  "width": 1},
+    {"name": "count", "direction": "output", "width": 8},
+    {"name": "tc",    "direction": "output", "width": 1}
+  ]
+}

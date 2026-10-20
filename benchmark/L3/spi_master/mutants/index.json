@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 18,
+    "original": "7",
+    "replacement": "6",
+    "description": "WID line 18: '7' -> '6'"
+  },
+  {
+    "id": "m002",
+    "op": "WID",
+    "line": 19,
+    "original": "2",
+    "replacement": "1",
+    "description": "WID line 19: '2' -> '1'"
+  },
+  {
+    "id": "m003",
+    "op": "RST",
+    "line": 26,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 26: '!' -> ''"
+  },
+  {
+    "id": "m004",
+    "op": "SDL",
+    "line": 30,
+    "original": "done    <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 30: \"done    <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m005",
+    "op": "SDL",
+    "line": 33,
+    "original": "sh      <= 8'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 33: \"sh      <= 8'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m006",
+    "op": "CRP",
+    "line": 34,
+    "original": "8'd0",
+    "replacement": "8'd1",
+    "description": "CRP line 34: \"8'd0\" -> \"8'd1\""
+  },
+  {
+    "id": "m007",
+    "op": "SDL",
+    "line": 45,
+    "original": "div_cnt <= 16'd0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 45: \"div_cnt <= 16'd0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 45,
+    "original": "16'd0",
+    "replacement": "16'd1",
+    "description": "CRP line 45: \"16'd0\" -> \"16'd1\""
+  },
+  {
+    "id": "m009",
+    "op": "UOI",
+    "line": 47,
+    "original": "(div_cnt == CLK_DIV - 1)",
+    "replacement": "(!(div_cnt == CLK_DIV - 1))",
+    "description": "UOI line 47: '(div_cnt == CLK_DIV - 1)' -> '(!(div_cnt == CLK_DIV - 1))'"
+  },
+  {
+    "id": "m010",
+    "op": "ROR",
+    "line": 47,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 47: '==' -> '!='"
+  },
+  {
+    "id": "m011",
+    "op": "AOR",
+    "line": 47,
+    "original": "-",
+    "replacement": "+",
+    "description": "AOR line 47: '-' -> '+'"
+  },
+  {
+    "id": "m012",
+    "op": "CRP",
+    "line": 47,
+    "original": "1",
+    "replacement": "2",
+    "description": "CRP line 47: '1' -> '2'"
+  },
+  {
+    "id": "m013",
+    "op": "CRP",
+    "line": 48,
+    "original": "16'd0",
+    "replacement": "16'd1",
+    "description": "CRP line 48: \"16'd0\" -> \"16'd1\""
+  },
+  {
+    "id": "m014",
+    "op": "UOI",
+    "line": 49,
+    "original": "(!sclk)",
+    "replacement": "(!(!sclk))",
+    "description": "UOI line 49: '(!sclk)' -> '(!(!sclk))'"
+  },
+  {
+    "id": "m015",
+    "op": "UOI",
+    "line": 54,
+    "original": "(bit_cnt == 3'd7)",
+    "replacement": "(!(bit_cnt == 3'd7))",
+    "description": "UOI line 54: \"(bit_cnt == 3'd7)\" -> \"(!(bit_cnt == 3'd7))\""
+  },
+  {
+    "id": "m016",
+    "op": "ROR",
+    "line": 54,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 54: '==' -> '!='"
+  },
+  {
+    "id": "m017",
+    "op": "WID",
+    "line": 60,
+    "original": "6",
+    "replacement": "5",
+    "description": "WID line 60: '6' -> '5'"
+  },
+  {
+    "id": "m018",
+    "op": "SDL",
+    "line": 61,
+    "original": "bit_cnt <= bit_cnt + 3'd1;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 61: \"bit_cnt <= bit_cnt + 3'd1;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m019",
+    "op": "AOR",
+    "line": 61,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 61: '+' -> '-'"
+  },
+  {
+    "id": "m020",
+    "op": "AOR",
+    "line": 65,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 65: '+' -> '-'"
+  }
+]

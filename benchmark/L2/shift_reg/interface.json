@@ -1,0 +1,40 @@
+{
+  "module": "shift_reg",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "mode",
+      "direction": "input",
+      "width": 2
+    },
+    {
+      "name": "d_in",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "s_in",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "q",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "s_out",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

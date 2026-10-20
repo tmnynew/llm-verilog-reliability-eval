@@ -1,0 +1,1 @@
+m008  reviewer-A  CRP duty_r reset value 0 -> 1: pwm is masked by rst_n during reset and cnt is already 1 at the first observable cycle, so cnt < duty_r is 0 for both values until the first latch at cnt==255; no observable difference.

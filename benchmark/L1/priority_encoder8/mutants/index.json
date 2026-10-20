@@ -1,0 +1,98 @@
+[
+  {
+    "id": "m001",
+    "op": "URO",
+    "line": 7,
+    "original": "|",
+    "replacement": "&",
+    "description": "URO line 7: '|' -> '&'"
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 11,
+    "original": "3'd7",
+    "replacement": "3'd6",
+    "description": "CRP line 11: \"3'd7\" -> \"3'd6\""
+  },
+  {
+    "id": "m003",
+    "op": "CRP",
+    "line": 12,
+    "original": "3'd6",
+    "replacement": "3'd7",
+    "description": "CRP line 12: \"3'd6\" -> \"3'd7\""
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 13,
+    "original": "3'd5",
+    "replacement": "3'd6",
+    "description": "CRP line 13: \"3'd5\" -> \"3'd6\""
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 14,
+    "original": "3'd4",
+    "replacement": "3'd5",
+    "description": "CRP line 14: \"3'd4\" -> \"3'd5\""
+  },
+  {
+    "id": "m006",
+    "op": "CRP",
+    "line": 15,
+    "original": "3'd3",
+    "replacement": "3'd4",
+    "description": "CRP line 15: \"3'd3\" -> \"3'd4\""
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 16,
+    "original": "3'd2",
+    "replacement": "3'd3",
+    "description": "CRP line 16: \"3'd2\" -> \"3'd3\""
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 17,
+    "original": "3'd1",
+    "replacement": "3'd2",
+    "description": "CRP line 17: \"3'd1\" -> \"3'd2\""
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 18,
+    "original": "8'b00000001",
+    "replacement": "8'b0",
+    "description": "CRP line 18: \"8'b00000001\" -> \"8'b0\""
+  },
+  {
+    "id": "m010",
+    "op": "CRP",
+    "line": 18,
+    "original": "3'd0",
+    "replacement": "3'd1",
+    "description": "CRP line 18: \"3'd0\" -> \"3'd1\""
+  },
+  {
+    "id": "m011",
+    "op": "DDL",
+    "line": 19,
+    "original": "default:     idx = 3'd0;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 19: \"default:     idx = 3'd0;\" -> '/* default removed */'"
+  },
+  {
+    "id": "m012",
+    "op": "CRP",
+    "line": 19,
+    "original": "3'd0",
+    "replacement": "3'd1",
+    "description": "CRP line 19: \"3'd0\" -> \"3'd1\""
+  }
+]

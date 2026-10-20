@@ -1,0 +1,8 @@
+{
+  "module": "parity_gen8",
+  "ports": [
+    {"name": "data",   "direction": "input",  "width": 8},
+    {"name": "odd",    "direction": "input",  "width": 1},
+    {"name": "parity", "direction": "output", "width": 1}
+  ]
+}

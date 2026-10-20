@@ -1,0 +1,23 @@
+{
+  "id": "ps2_rx",
+  "level": "L3",
+  "title": "PS/2 接收器",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "serial",
+    "cdc",
+    "parity"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 4,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 39,
+    "FF": 44,
+    "Fmax_MHz": 246.3054187192118
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

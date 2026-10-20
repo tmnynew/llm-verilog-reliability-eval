@@ -1,0 +1,1 @@
+设计一个 RISC-V RV32I 单周期数据通路片段 `rv32_datapath`：包含 32×32 位寄存器堆与 ALU，valid=1 时执行 instr 中的一条 R 型（ADD/SUB/SLL/SLT/SLTU/XOR/SRL/SRA/OR/AND）或 I 型算术指令（ADDI/SLTI/SLTIU/XORI/ORI/ANDI/SLLI/SRLI/SRAI），把结果写入 rd（x0 恒为 0）并在下一周期输出 alu_result；不支持的指令置 illegal 且不写寄存器；dbg_addr/dbg_data 提供寄存器堆的组合读口。

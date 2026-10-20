@@ -1,0 +1,63 @@
+{
+  "module": "spi_master",
+  "parameters": {
+    "CLK_DIV": 4
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "start",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "tx_data",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "rx_data",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "busy",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "done",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "sclk",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "mosi",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "miso",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "cs_n",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "i2c_master",
+  "level": "L3",
+  "title": "I2C 主机",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "serial"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 58,
+    "FF": 62,
+    "Fmax_MHz": 228.83295194508008
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

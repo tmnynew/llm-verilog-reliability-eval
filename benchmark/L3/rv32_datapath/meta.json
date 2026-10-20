@@ -1,0 +1,23 @@
+{
+  "id": "rv32_datapath",
+  "level": "L3",
+  "title": "RISC-V 单周期数据通路片段",
+  "tags": [
+    "system",
+    "protocol",
+    "cpu",
+    "alu",
+    "regfile",
+    "decode"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 0,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 1293,
+    "FF": 1025,
+    "Fmax_MHz": 111.64452383610583
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

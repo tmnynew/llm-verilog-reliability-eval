@@ -1,0 +1,22 @@
+{
+  "id": "counter_param",
+  "level": "L2",
+  "title": "参数化模 N 计数器",
+  "tags": [
+    "sequential",
+    "counter",
+    "parameter",
+    "width",
+    "reset"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 0,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 10,
+    "FF": 8,
+    "Fmax_MHz": 451.05999097880016
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

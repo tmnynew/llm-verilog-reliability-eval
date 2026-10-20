@@ -1,0 +1,20 @@
+{
+  "module": "lzc8",
+  "ports": [
+    {
+      "name": "din",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "count",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "zero",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

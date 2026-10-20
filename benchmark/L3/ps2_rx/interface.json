@@ -1,0 +1,43 @@
+{
+  "module": "ps2_rx",
+  "parameters": {
+    "TIMEOUT": 200
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "ps2_clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "ps2_data",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "data",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "valid",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "err",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "watchdog",
+  "level": "L2",
+  "title": "看门狗定时器",
+  "tags": [
+    "sequential",
+    "reset",
+    "counter",
+    "parameter",
+    "timeout",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 8,
+    "FF": 7,
+    "Fmax_MHz": 395.72615749901064
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

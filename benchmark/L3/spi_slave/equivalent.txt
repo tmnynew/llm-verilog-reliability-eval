@@ -1,0 +1,3 @@
+m009  reviewer-A  SDL reset of sclk_s removed: the synchroniser is refilled from the idle-low sclk within 3 cycles after reset, before any edge can be detected (inputs are idle at reset release per spec).
+m012  reviewer-A  CRP tx_sh reset 0 -> 1: miso = tx_sh[7] and bit 7 of 8'd1 is 0; tx_sh is loaded on the cs_n falling edge before it is shifted.
+m013  reviewer-A  SDL reset of bit_cnt removed: cs_s resets to deselected, so a cs_n falling edge (which clears bit_cnt) is always detected before any sclk edge is counted.

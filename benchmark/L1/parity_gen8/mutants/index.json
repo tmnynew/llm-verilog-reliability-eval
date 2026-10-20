@@ -1,0 +1,18 @@
+[
+  {
+    "id": "m001",
+    "op": "URO",
+    "line": 7,
+    "original": "^",
+    "replacement": "|",
+    "description": "URO line 7: '^' -> '|'"
+  },
+  {
+    "id": "m002",
+    "op": "LOR",
+    "line": 7,
+    "original": "^",
+    "replacement": "|",
+    "description": "LOR line 7: '^' -> '|'"
+  }
+]

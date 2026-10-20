@@ -1,0 +1,38 @@
+# Benchmark manifest – 30 problems, 3 levels (paper Table 2).
+# status: ready   – spec/golden/testbench present, validated by CI (golden passes, mutation score >= 95 %)
+#         planned – listed in the paper, not yet implemented
+version: 0.1.0
+problems:
+  # ---------------- L1 combinational (exhaustive comparison) -----------------
+  - {id: priority_encoder8, level: L1, title: 8 位优先编码器,        status: ready}
+  - {id: seg7_decoder,      level: L1, title: 7 段译码器,            status: ready}
+  - {id: parity_gen8,       level: L1, title: 奇偶校验器,            status: ready}
+  - {id: comparator4,       level: L1, title: 4 位比较器,            status: ready}
+  - {id: barrel_shifter8,   level: L1, title: 8 位桶形移位器,        status: ready}
+  - {id: cla_adder4,        level: L1, title: 4 位超前进位加法器,    status: ready}
+  - {id: mux8_1,            level: L1, title: 8 选 1 多路选择器,     status: ready}
+  - {id: gray_conv4,        level: L1, title: 格雷码转换,            status: ready}
+  - {id: bcd_adder,         level: L1, title: BCD 加法器,            status: ready}
+  - {id: lzc8,              level: L1, title: 前导零计数,            status: ready}
+  # ---------------- L2 sequential (cycle-level, declared latency window) -----
+  - {id: counter_param,     level: L2, title: 参数化模 N 计数器,     status: ready}
+  - {id: seq_detector_1011, level: L2, title: 序列检测器 1011,       status: ready}
+  - {id: debounce,          level: L2, title: 按键消抖,              status: ready}
+  - {id: clk_divider,       level: L2, title: 可编程分频器,          status: ready}
+  - {id: pwm_gen,           level: L2, title: PWM 发生器,            status: ready}
+  - {id: shift_reg,         level: L2, title: 移位寄存器,            status: ready}
+  - {id: ring_counter,      level: L2, title: 环形计数器,            status: ready}
+  - {id: edge_detect,       level: L2, title: 边沿检测器,            status: ready}
+  - {id: watchdog,          level: L2, title: 看门狗定时器,          status: ready}
+  - {id: pulse_stretch,     level: L2, title: 脉冲展宽器,            status: ready}
+  # ---------------- L3 system-level (transaction scoreboard + assertions) ----
+  - {id: sync_fifo,         level: L3, title: 同步 FIFO,             status: ready}
+  - {id: uart,              level: L3, title: UART 收发器,           status: ready}
+  - {id: spi_master,        level: L3, title: SPI 主机,              status: ready}
+  - {id: i2c_master,        level: L3, title: I2C 主机,              status: ready}
+  - {id: rv32_datapath,     level: L3, title: RISC-V 单周期数据通路片段, status: ready}
+  - {id: spi_slave,         level: L3, title: SPI 从机,              status: ready}
+  - {id: ps2_rx,            level: L3, title: PS/2 接收器,           status: ready}
+  - {id: vga_timing,        level: L3, title: VGA 时序发生器,        status: ready}
+  - {id: simple_dma,        level: L3, title: 简易 DMA,              status: ready}
+  - {id: axi_lite_slave,    level: L3, title: AXI-Lite 从机,         status: ready}

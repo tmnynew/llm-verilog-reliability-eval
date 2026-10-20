@@ -1,0 +1,22 @@
+{
+  "id": "spi_slave",
+  "level": "L3",
+  "title": "SPI 从机",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "serial",
+    "cdc"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 4,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 13,
+    "FF": 35,
+    "Fmax_MHz": 338.8681802778719
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

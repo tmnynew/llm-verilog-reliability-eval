@@ -1,0 +1,30 @@
+{
+  "module": "clk_divider",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "div",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "tick",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "clk_out",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

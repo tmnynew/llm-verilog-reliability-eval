@@ -1,0 +1,22 @@
+{
+  "id": "ring_counter",
+  "level": "L2",
+  "title": "环形计数器",
+  "tags": [
+    "sequential",
+    "reset",
+    "counter",
+    "one-hot",
+    "fsm"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 6,
+    "FF": 5,
+    "Fmax_MHz": 634.5177664974619
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

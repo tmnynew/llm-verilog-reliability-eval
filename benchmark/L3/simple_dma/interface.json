@@ -1,0 +1,70 @@
+{
+  "module": "simple_dma",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "start",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "src",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "dst",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "len",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "busy",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "done",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "mem_addr",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "mem_wdata",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "mem_we",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "mem_re",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "mem_rdata",
+      "direction": "input",
+      "width": 8
+    }
+  ]
+}

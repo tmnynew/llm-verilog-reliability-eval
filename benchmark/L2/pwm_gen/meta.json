@@ -1,0 +1,22 @@
+{
+  "id": "pwm_gen",
+  "level": "L2",
+  "title": "PWM 发生器",
+  "tags": [
+    "sequential",
+    "reset",
+    "counter",
+    "pwm",
+    "width"
+  ],
+  "testbench_type": "cycle",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 14,
+    "FF": 16,
+    "Fmax_MHz": 327.22513089005236
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "mux8_1",
+  "level": "L1",
+  "title": "8 选 1 多路选择器",
+  "tags": [
+    "combinational",
+    "mux",
+    "parameter",
+    "width",
+    "default-branch"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 12,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

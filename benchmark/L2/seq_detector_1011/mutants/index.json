@@ -1,0 +1,138 @@
+[
+  {
+    "id": "m001",
+    "op": "CRP",
+    "line": 9,
+    "original": "2'd1",
+    "replacement": "2'd2",
+    "description": "CRP line 9: \"2'd1\" -> \"2'd2\""
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 10,
+    "original": "2'd2",
+    "replacement": "2'd3",
+    "description": "CRP line 10: \"2'd2\" -> \"2'd3\""
+  },
+  {
+    "id": "m003",
+    "op": "CRP",
+    "line": 11,
+    "original": "2'd3",
+    "replacement": "2'd2",
+    "description": "CRP line 11: \"2'd3\" -> \"2'd2\""
+  },
+  {
+    "id": "m004",
+    "op": "WID",
+    "line": 13,
+    "original": "1",
+    "replacement": "0",
+    "description": "WID line 13: '1' -> '0'"
+  },
+  {
+    "id": "m005",
+    "op": "SDL",
+    "line": 17,
+    "original": "next_state = S0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 17: 'next_state = S0;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m006",
+    "op": "SDL",
+    "line": 18,
+    "original": "det_next   = 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 18: \"det_next   = 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 18,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 18: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m008",
+    "op": "SDL",
+    "line": 24,
+    "original": "next_state = din ? S1 : S10;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 24: 'next_state = din ? S1 : S10;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m009",
+    "op": "SDL",
+    "line": 25,
+    "original": "det_next   = din;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 25: 'det_next   = din;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m010",
+    "op": "DDL",
+    "line": 27,
+    "original": "default: next_state = S0;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 27: 'default: next_state = S0;' -> '/* default removed */'"
+  },
+  {
+    "id": "m011",
+    "op": "UOI",
+    "line": 32,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 32: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m012",
+    "op": "RST",
+    "line": 32,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 32: '!' -> ''"
+  },
+  {
+    "id": "m013",
+    "op": "SDL",
+    "line": 33,
+    "original": "state <= S0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 33: 'state <= S0;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m014",
+    "op": "SDL",
+    "line": 34,
+    "original": "det   <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 34: \"det   <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m015",
+    "op": "CRP",
+    "line": 34,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 34: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m016",
+    "op": "SDL",
+    "line": 36,
+    "original": "state <= next_state;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 36: 'state <= next_state;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m017",
+    "op": "SDL",
+    "line": 37,
+    "original": "det   <= det_next;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 37: 'det   <= det_next;' -> '/* statement removed */'"
+  }
+]

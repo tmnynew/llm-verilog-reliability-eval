@@ -1,0 +1,35 @@
+{
+  "module": "ring_counter",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "en",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dir",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "q",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "wrap",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

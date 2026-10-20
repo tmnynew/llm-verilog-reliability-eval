@@ -1,0 +1,20 @@
+{
+  "id": "barrel_shifter8",
+  "level": "L1",
+  "title": "8 位桶形移位器",
+  "tags": [
+    "combinational",
+    "shift",
+    "default-branch",
+    "width"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 33,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 8,
+    "original": "15",
+    "replacement": "14",
+    "description": "WID line 8: '15' -> '14'"
+  },
+  {
+    "id": "m002",
+    "op": "CRP",
+    "line": 12,
+    "original": "2'b00",
+    "replacement": "2'b1",
+    "description": "CRP line 12: \"2'b00\" -> \"2'b1\""
+  },
+  {
+    "id": "m003",
+    "op": "CRP",
+    "line": 13,
+    "original": "2'b01",
+    "replacement": "2'b0",
+    "description": "CRP line 13: \"2'b01\" -> \"2'b0\""
+  },
+  {
+    "id": "m004",
+    "op": "CRP",
+    "line": 14,
+    "original": "2'b10",
+    "replacement": "2'b11",
+    "description": "CRP line 14: \"2'b10\" -> \"2'b11\""
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 15,
+    "original": "2'b11",
+    "replacement": "2'b10",
+    "description": "CRP line 15: \"2'b11\" -> \"2'b10\""
+  },
+  {
+    "id": "m006",
+    "op": "WID",
+    "line": 15,
+    "original": "15",
+    "replacement": "14",
+    "description": "WID line 15: '15' -> '14'"
+  },
+  {
+    "id": "m007",
+    "op": "DDL",
+    "line": 16,
+    "original": "default: dout = din;",
+    "replacement": "/* default removed */",
+    "description": "DDL line 16: 'default: dout = din;' -> '/* default removed */'"
+  }
+]

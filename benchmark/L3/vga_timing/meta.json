@@ -1,0 +1,22 @@
+{
+  "id": "vga_timing",
+  "level": "L3",
+  "title": "VGA 时序发生器",
+  "tags": [
+    "system",
+    "protocol",
+    "counter",
+    "video",
+    "parameterised"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 41,
+    "FF": 20,
+    "Fmax_MHz": 264.1310089804543
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

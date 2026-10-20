@@ -1,0 +1,16 @@
+{
+  "module": "uart",
+  "parameters": {"CLKS_PER_BIT": 16},
+  "ports": [
+    {"name": "clk",      "direction": "input",  "width": 1},
+    {"name": "rst_n",    "direction": "input",  "width": 1},
+    {"name": "tx_start", "direction": "input",  "width": 1},
+    {"name": "tx_data",  "direction": "input",  "width": 8},
+    {"name": "tx_busy",  "direction": "output", "width": 1},
+    {"name": "tx",       "direction": "output", "width": 1},
+    {"name": "rx",       "direction": "input",  "width": 1},
+    {"name": "rx_data",  "direction": "output", "width": 8},
+    {"name": "rx_valid", "direction": "output", "width": 1},
+    {"name": "rx_err",   "direction": "output", "width": 1}
+  ]
+}

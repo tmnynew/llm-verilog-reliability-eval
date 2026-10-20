@@ -1,0 +1,50 @@
+{
+  "module": "vga_timing",
+  "parameters": {
+    "H_ACTIVE": 640,
+    "H_FP": 16,
+    "H_SYNC": 96,
+    "H_BP": 48,
+    "V_ACTIVE": 480,
+    "V_FP": 10,
+    "V_SYNC": 2,
+    "V_BP": 33
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "hsync",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "vsync",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "de",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "x",
+      "direction": "output",
+      "width": 10
+    },
+    {
+      "name": "y",
+      "direction": "output",
+      "width": 10
+    }
+  ]
+}

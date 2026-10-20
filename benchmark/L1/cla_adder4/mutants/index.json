@@ -1,0 +1,162 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 11,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 11: '3' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "WID",
+    "line": 12,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 12: '3' -> '2'"
+  },
+  {
+    "id": "m003",
+    "op": "LOR",
+    "line": 12,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 12: '&' -> '|'"
+  },
+  {
+    "id": "m004",
+    "op": "WID",
+    "line": 13,
+    "original": "4",
+    "replacement": "3",
+    "description": "WID line 13: '4' -> '3'"
+  },
+  {
+    "id": "m005",
+    "op": "LOR",
+    "line": 17,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 17: '|' -> '&'"
+  },
+  {
+    "id": "m006",
+    "op": "LOR",
+    "line": 17,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 17: '&' -> '|'"
+  },
+  {
+    "id": "m007",
+    "op": "LOR",
+    "line": 18,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 18: '&' -> '|'"
+  },
+  {
+    "id": "m008",
+    "op": "LOR",
+    "line": 18,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 18: '&' -> '|'"
+  },
+  {
+    "id": "m009",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m010",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m011",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m012",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m013",
+    "op": "LOR",
+    "line": 19,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 19: '&' -> '|'"
+  },
+  {
+    "id": "m014",
+    "op": "WID",
+    "line": 21,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 21: '3' -> '2'"
+  },
+  {
+    "id": "m015",
+    "op": "URO",
+    "line": 23,
+    "original": "&",
+    "replacement": "|",
+    "description": "URO line 23: '&' -> '|'"
+  },
+  {
+    "id": "m016",
+    "op": "LOR",
+    "line": 24,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 24: '|' -> '&'"
+  },
+  {
+    "id": "m017",
+    "op": "LOR",
+    "line": 24,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 24: '|' -> '&'"
+  },
+  {
+    "id": "m018",
+    "op": "LOR",
+    "line": 24,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 24: '&' -> '|'"
+  },
+  {
+    "id": "m019",
+    "op": "LOR",
+    "line": 24,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 24: '|' -> '&'"
+  },
+  {
+    "id": "m020",
+    "op": "LOR",
+    "line": 24,
+    "original": "&",
+    "replacement": "|",
+    "description": "LOR line 24: '&' -> '|'"
+  }
+]

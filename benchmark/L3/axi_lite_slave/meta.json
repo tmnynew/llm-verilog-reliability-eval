@@ -1,0 +1,22 @@
+{
+  "id": "axi_lite_slave",
+  "level": "L3",
+  "title": "AXI-Lite 从机",
+  "tags": [
+    "system",
+    "protocol",
+    "bus",
+    "handshake",
+    "registers"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 4,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 96,
+    "FF": 177,
+    "Fmax_MHz": 312.6954346466542
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

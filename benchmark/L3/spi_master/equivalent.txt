@@ -1,0 +1,3 @@
+m005  reviewer-A  SDL reset of sh removed: sh is reloaded from tx_data when start is accepted and mosi is unspecified while cs_n=1.
+m006  reviewer-A  CRP rx_sh reset 0 -> 1: rx_sh is shifted 8 times before it is copied to rx_data, the reset value never reaches an output.
+m007  reviewer-A  SDL reset of div_cnt removed: div_cnt is cleared when start is accepted and is not evaluated while idle.

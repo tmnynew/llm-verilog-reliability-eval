@@ -1,0 +1,19 @@
+{
+  "id": "priority_encoder8",
+  "level": "L1",
+  "title": "8 位优先编码器",
+  "tags": [
+    "combinational",
+    "priority",
+    "default-branch"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 6,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

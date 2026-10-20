@@ -1,0 +1,152 @@
+[
+  {
+    "file": "e01.v",
+    "sample_id": 3405,
+    "model": "Model A",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 1,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=19 exp=1 got=0",
+      "TB_FAIL tag=proto case=20 exp=10 got=11"
+    ]
+  },
+  {
+    "file": "e02.v",
+    "sample_id": 3208,
+    "model": "Model C",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 6,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=1 got=0",
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=5 exp=2 got=1"
+    ]
+  },
+  {
+    "file": "e03.v",
+    "sample_id": 3406,
+    "model": "Model A",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 2,
+    "round": 0,
+    "full_tb_primary_error": "E5",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=func case=45 exp=b0 got=xx",
+      "TB_FAIL tag=func case=46 exp=ec got=xx",
+      "TB_FAIL tag=func case=47 exp=11 got=xx"
+    ]
+  },
+  {
+    "file": "e04.v",
+    "sample_id": 3404,
+    "model": "Model A",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 0,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=29 exp=0 got=1",
+      "TB_FAIL tag=proto case=30 exp=f got=e",
+      "TB_FAIL tag=proto case=30 exp=0 got=1"
+    ]
+  },
+  {
+    "file": "e05.v",
+    "sample_id": 3411,
+    "model": "Model A",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 7,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=19 exp=1 got=0",
+      "TB_FAIL tag=proto case=20 exp=10 got=11"
+    ]
+  },
+  {
+    "file": "e06.v",
+    "sample_id": 3410,
+    "model": "Model A",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 6,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=19 exp=1 got=0",
+      "TB_FAIL tag=proto case=20 exp=10 got=11"
+    ]
+  },
+  {
+    "file": "e07.v",
+    "sample_id": 4083,
+    "model": "Model B",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 7,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=30 exp=0 got=1",
+      "TB_FAIL tag=proto case=31 exp=f got=e",
+      "TB_FAIL tag=proto case=32 exp=f got=e"
+    ]
+  },
+  {
+    "file": "e08.v",
+    "sample_id": 4377,
+    "model": "Model D",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 4,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=30 exp=f got=e",
+      "TB_FAIL tag=proto case=31 exp=f got=d",
+      "TB_FAIL tag=proto case=32 exp=f got=c"
+    ]
+  },
+  {
+    "file": "e09.v",
+    "sample_id": 4082,
+    "model": "Model B",
+    "spec_version": "detailed",
+    "strategy": "zero",
+    "idx": 5,
+    "round": 3,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=19 exp=1 got=0",
+      "TB_FAIL tag=proto case=20 exp=10 got=11"
+    ]
+  },
+  {
+    "file": "e10.v",
+    "sample_id": 4117,
+    "model": "Model B",
+    "spec_version": "detailed",
+    "strategy": "cot",
+    "idx": 7,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=4 exp=1 got=0",
+      "TB_FAIL tag=proto case=4 exp=0 got=1",
+      "TB_FAIL tag=proto case=5 exp=2 got=1"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "module": "barrel_shifter8",
+  "ports": [
+    {"name": "din",   "direction": "input",  "width": 8},
+    {"name": "shamt", "direction": "input",  "width": 3},
+    {"name": "mode",  "direction": "input",  "width": 2},
+    {"name": "dout",  "direction": "output", "width": 8}
+  ]
+}

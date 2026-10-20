@@ -1,0 +1,114 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 10,
+    "original": "4",
+    "replacement": "3",
+    "description": "WID line 10: '4' -> '3'"
+  },
+  {
+    "id": "m002",
+    "op": "AOR",
+    "line": 10,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 10: '+' -> '-'"
+  },
+  {
+    "id": "m003",
+    "op": "AOR",
+    "line": 10,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 10: '+' -> '-'"
+  },
+  {
+    "id": "m004",
+    "op": "ROR",
+    "line": 11,
+    "original": ">",
+    "replacement": ">=",
+    "description": "ROR line 11: '>' -> '>='"
+  },
+  {
+    "id": "m005",
+    "op": "CRP",
+    "line": 11,
+    "original": "5'd9",
+    "replacement": "5'd10",
+    "description": "CRP line 11: \"5'd9\" -> \"5'd10\""
+  },
+  {
+    "id": "m006",
+    "op": "WID",
+    "line": 12,
+    "original": "4",
+    "replacement": "3",
+    "description": "WID line 12: '4' -> '3'"
+  },
+  {
+    "id": "m007",
+    "op": "AOR",
+    "line": 12,
+    "original": "+",
+    "replacement": "-",
+    "description": "AOR line 12: '+' -> '-'"
+  },
+  {
+    "id": "m008",
+    "op": "CRP",
+    "line": 12,
+    "original": "5'd6",
+    "replacement": "5'd7",
+    "description": "CRP line 12: \"5'd6\" -> \"5'd7\""
+  },
+  {
+    "id": "m009",
+    "op": "WID",
+    "line": 14,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 14: '3' -> '2'"
+  },
+  {
+    "id": "m010",
+    "op": "ROR",
+    "line": 16,
+    "original": ">",
+    "replacement": ">=",
+    "description": "ROR line 16: '>' -> '>='"
+  },
+  {
+    "id": "m011",
+    "op": "CRP",
+    "line": 16,
+    "original": "4'd9",
+    "replacement": "4'd10",
+    "description": "CRP line 16: \"4'd9\" -> \"4'd10\""
+  },
+  {
+    "id": "m012",
+    "op": "LOR",
+    "line": 16,
+    "original": "|",
+    "replacement": "&",
+    "description": "LOR line 16: '|' -> '&'"
+  },
+  {
+    "id": "m013",
+    "op": "ROR",
+    "line": 16,
+    "original": ">",
+    "replacement": ">=",
+    "description": "ROR line 16: '>' -> '>='"
+  },
+  {
+    "id": "m014",
+    "op": "CRP",
+    "line": 16,
+    "original": "4'd9",
+    "replacement": "4'd10",
+    "description": "CRP line 16: \"4'd9\" -> \"4'd10\""
+  }
+]

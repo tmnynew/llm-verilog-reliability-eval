@@ -1,0 +1,217 @@
+==============================================================================
+0. sample inventory / dates / versions
+  Model A: n=300 main=300 version=['deepseek-v4-pro'] dates=['2026-10-03']..['2026-10-03']
+  Model B: n=2400 main=300 version=['qwen3-coder-plus-2025-09-23'] dates=['2026-10-02']..['2026-10-04']
+  Model C: n=300 main=300 version=['glm-5'] dates=['2026-10-03']..['2026-10-03']
+  Model D: n=300 main=300 version=['qwen3-coder-30b-a3b-instruct'] dates=['2026-10-03']..['2026-10-04']
+  truncated verdicts=0  $clog2-rejected verdicts=0
+==============================================================================
+T5. pass@1 [Wilson CI] / pass@5  (main config, pre-repair)
+  Model A: L1 86.0 [77.9, 91.5] p@5 99.7 (n=100) | L2 84.0 [75.6, 89.9] p@5 94.8 (n=100) | L3 37.0 [28.2, 46.8] p@5 69.7 (n=100)
+  Model B: L1 62.0 [52.2, 70.9] p@5 69.2 (n=100) | L2 79.0 [70.0, 85.8] p@5 80.0 (n=100) | L3 12.0 [7.0, 19.8] p@5 17.8 (n=100)
+  Model C: L1 78.0 [68.9, 85.0] p@5 97.8 (n=100) | L2 77.0 [67.8, 84.2] p@5 98.9 (n=100) | L3 35.0 [26.4, 44.7] p@5 70.3 (n=100)
+  Model D: L1 44.0 [34.7, 53.8] p@5 63.3 (n=100) | L2 56.0 [46.2, 65.3] p@5 65.0 (n=100) | L3 10.0 [5.5, 17.4] p@5 15.0 (n=100)
+
+  pairwise Fisher (pre-repair pass@1) per level:
+   L1: A-B p=1.7e-04; A-C p=0.197; A-D p=4.9e-10; B-C p=0.020; B-D p=0.016; C-D p=1.3e-06
+   L2: A-B p=0.467; A-C p=0.284; A-D p=2.4e-05; B-C p=0.865; B-D p=8.3e-04; C-D p=0.003
+   L3: A-B p=6.1e-05; A-C p=0.883; A-D p=9.5e-06; B-C p=2.0e-04; B-D p=0.822; C-D p=3.4e-05
+  L1 vs L3 decline per model:
+   Model A: p=7.4e-13  L2 vs L3 p=9.5e-12
+   Model B: p=1.3e-13  L2 vs L3 p=1.1e-22
+   Model C: p=1.1e-09  L2 vs L3 p=3.0e-09
+   Model D: p=6.8e-08  L2 vs L3 p=2.6e-12
+
+  per-problem pass@1 (cloud models pooled, main config):
+   L1 parity_gen8        奇偶校验器          cloud 100%  A/B/C/D passes of 10: 10/10/10/10
+   L1 gray_conv4         格雷码转换          cloud 100%  A/B/C/D passes of 10: 10/10/10/10
+   L1 bcd_adder          BCD 加法器        cloud 100%  A/B/C/D passes of 10: 10/10/10/10
+   L1 mux8_1             8 选 1 多路选择器    cloud  87%  A/B/C/D passes of 10: 10/10/6/3
+   L1 comparator4        4 位比较器         cloud  70%  A/B/C/D passes of 10: 10/9/2/0
+   L1 cla_adder4         4 位超前进位加法器     cloud  70%  A/B/C/D passes of 10: 4/10/7/3
+   L1 seg7_decoder       7 段译码器         cloud  67%  A/B/C/D passes of 10: 10/0/10/0
+   L1 priority_encoder8  8 位优先编码器       cloud  63%  A/B/C/D passes of 10: 9/0/10/0
+   L1 lzc8               前导零计数          cloud  57%  A/B/C/D passes of 10: 8/3/6/7
+   L1 barrel_shifter8    8 位桶形移位器       cloud  40%  A/B/C/D passes of 10: 5/0/7/1
+   L2 shift_reg          移位寄存器          cloud 100%  A/B/C/D passes of 10: 10/10/10/10
+   L2 debounce           按键消抖           cloud 100%  A/B/C/D passes of 10: 10/10/10/1
+   L2 pwm_gen            PWM 发生器        cloud  97%  A/B/C/D passes of 10: 10/10/9/9
+   L2 watchdog           看门狗定时器         cloud  93%  A/B/C/D passes of 10: 9/10/9/9
+   L2 edge_detect        边沿检测器          cloud  93%  A/B/C/D passes of 10: 10/10/8/0
+   L2 seq_detector_1011  序列检测器 1011     cloud  77%  A/B/C/D passes of 10: 10/10/3/7
+   L2 counter_param      参数化模 N 计数器     cloud  70%  A/B/C/D passes of 10: 1/10/10/10
+   L2 ring_counter       环形计数器          cloud  57%  A/B/C/D passes of 10: 10/0/7/0
+   L2 pulse_stretch      脉冲展宽器          cloud  57%  A/B/C/D passes of 10: 4/9/4/10
+   L2 clk_divider        可编程分频器         cloud  57%  A/B/C/D passes of 10: 10/0/7/0
+   L3 vga_timing         VGA 时序发生器      cloud  87%  A/B/C/D passes of 10: 10/10/6/9
+   L3 rv32_datapath      RISC-V 单周期数据通路片段 cloud  50%  A/B/C/D passes of 10: 7/0/8/0
+   L3 sync_fifo          同步 FIFO        cloud  40%  A/B/C/D passes of 10: 5/0/7/1
+   L3 ps2_rx             PS/2 接收器       cloud  30%  A/B/C/D passes of 10: 7/0/2/0
+   L3 uart               UART 收发器       cloud  23%  A/B/C/D passes of 10: 2/0/5/0
+   L3 spi_master         SPI 主机         cloud  23%  A/B/C/D passes of 10: 1/2/4/0
+   L3 axi_lite_slave     AXI-Lite 从机    cloud  17%  A/B/C/D passes of 10: 3/0/2/0
+   L3 i2c_master         I2C 主机         cloud   7%  A/B/C/D passes of 10: 2/0/0/0
+   L3 spi_slave          SPI 从机         cloud   3%  A/B/C/D passes of 10: 0/0/1/0
+   L3 simple_dma         简易 DMA         cloud   0%  A/B/C/D passes of 10: 0/0/0/0
+==============================================================================
+T6. synthesizability (main config, pre-repair; judged = reached simulation)
+  Model A: judged=281/300 synth_ok=99.6 latch=0.0 (0) e9=0.0 sim_ok=207 sim_ok&synth_bad=0.0 (0) lint_density mean=0.63 median=0.00 disagreement=0.4 (1) synth_errors=1
+      lint categories: [('WIDTH', 66), ('CASEINCOMPLETE', 36), ('MULTIDRIVENPROC', 6)]
+      synth error e.g. axi_lite_slave: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+  Model B: judged=231/300 synth_ok=98.7 latch=0.0 (0) e9=0.0 sim_ok=153 sim_ok&synth_bad=0.0 (0) lint_density mean=0.66 median=0.00 disagreement=1.3 (3) synth_errors=3
+      lint categories: [('WIDTH', 110), ('CASEINCOMPLETE', 22), ('MULTIDRIVENPROC', 12), ('CASEOVERLAP', 4), ('UNSIGNED', 2)]
+      synth error e.g. sync_fifo: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+      synth error e.g. sync_fifo: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+      synth error e.g. sync_fifo: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+  Model C: judged=281/300 synth_ok=99.6 latch=0.0 (0) e9=0.0 sim_ok=190 sim_ok&synth_bad=0.0 (0) lint_density mean=0.74 median=0.00 disagreement=0.4 (1) synth_errors=1
+      lint categories: [('WIDTH', 73), ('CASEINCOMPLETE', 17), ('MULTIDRIVENPROC', 2)]
+      synth error e.g. spi_master: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+  Model D: judged=214/300 synth_ok=95.3 latch=0.5 (1) e9=0.0 sim_ok=110 sim_ok&synth_bad=0.0 (0) lint_density mean=1.88 median=0.00 disagreement=2.3 (5) synth_errors=9
+      lint categories: [('WIDTH', 89), ('MULTIDRIVEN', 23), ('CASEINCOMPLETE', 14), ('MULTIDRIVENPROC', 11), ('UNSIGNED', 4), ('CASEOVERLAP', 3), ('UNDRIVEN', 2), ('UNOPTFLAT', 1)]
+      latch samples by problem: [('sync_fifo', 1)]
+      synth error e.g. priority_encoder8: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+      synth error e.g. priority_encoder8: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+      synth error e.g. priority_encoder8: "ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.\nERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run."
+  Model B all configs: disagreement 2.1 of 1816 judged
+
+  stage of first failure per model (main config, pre-repair):
+  Model A: {'passed': 207, 'compile': 19, 'simulation': 74}
+  Model B: {'compile': 69, 'passed': 153, 'simulation': 78}
+  Model C: {'passed': 190, 'simulation': 91, 'compile': 19}
+  Model D: {'simulation': 104, 'compile': 86, 'passed': 110}
+==============================================================================
+T7. primary error distribution by level (4 models pooled, main config, pre-repair)
+  L1: n=130 E2 75 (58%), E5 15 (12%), 待复核 40 (31%)
+      待复核 by problem: [('comparator4', 14), ('priority_encoder8', 8), ('cla_adder4', 6), ('mux8_1', 5), ('lzc8', 5), ('barrel_shifter8', 2)]
+      待复核 stage: Counter({'simulation': 40})
+      all labels (multi): {'E2': 75, 'E5': 15}
+  L2: n=104 E2 26 (25%), E4 4 (4%), E5 1 (1%), E7 29 (28%), 待复核 44 (42%)
+      待复核 by problem: [('clk_divider', 22), ('pulse_stretch', 12), ('debounce', 9), ('pwm_gen', 1)]
+      待复核 stage: Counter({'simulation': 44})
+      all labels (multi): {'E2': 26, 'E4': 4, 'E5': 2, 'E6': 2, 'E7': 32}
+  L3: n=306 E2 92 (30%), E5 11 (4%), E7 68 (22%), E8 135 (44%)
+      all labels (multi): {'E2': 92, 'E4': 1, 'E5': 46, 'E6': 35, 'E7': 96, 'E8': 135}
+  total failed 540, auto-attributed 456 (84.4), review 84
+  E2 breakdown (main config, round 0):
+   Model A: E2=19 ansi-reg=17 sv-constructs=1
+   Model B: E2=69 ansi-reg=42 sv-constructs=9
+   Model C: E2=19 ansi-reg=8 sv-constructs=0
+   Model D: E2=86 ansi-reg=53 sv-constructs=18
+  E8 by problem (L3 failures, pooled):
+   [('i2c_master', 31), ('uart', 23), ('simple_dma', 23), ('ps2_rx', 17), ('spi_master', 15), ('sync_fifo', 13), ('axi_lite_slave', 7), ('spi_slave', 6)]
+  failed_cases tags (L3, pooled, round 0):
+   [('func', 2114), ('proto', 1683), ('timing', 158), ('crash', 4), ('reset', 2)]
+==============================================================================
+T8. Model B spec x strategy (all 30 problems, pre-repair)
+  zero       brief 34.0 [28.9, 39.5] (n=300)  detailed 51.0 [45.4, 56.6] (n=300)  diff +17.0  p=3.5e-05
+  few        brief 25.7 [21.1, 30.9] (n=300)  detailed 53.0 [47.4, 58.6] (n=300)  diff +27.3  p=9.0e-12
+  constraint brief 36.7 [31.4, 42.3] (n=300)  detailed 50.3 [44.7, 56.0] (n=300)  diff +13.7  p=9.7e-04
+  cot        brief 21.7 [17.4, 26.7] (n=300)  detailed 47.0 [41.4, 52.6] (n=300)  diff +25.3  p=7.9e-11
+  strategy vs zero-shot within each spec:
+   brief: few -8.3 p=0.032; constraint +2.7 p=0.550; cot -12.3 p=0.001
+   detailed: few +2.0 p=0.683; constraint -0.7 p=0.935; cot -4.0 p=0.369
+  latch rate / E2 rate by config:
+   brief   /zero       latch 0/232 (0.0)  E2 68/300 (22.7)
+   brief   /few        latch 0/236 (0.0)  E2 64/300 (21.3)
+   brief   /constraint latch 0/241 (0.0)  E2 59/300 (19.7)
+   brief   /cot        latch 0/211 (0.0)  E2 88/300 (29.3)
+   detailed/zero       latch 0/231 (0.0)  E2 69/300 (23.0)
+   detailed/few        latch 0/223 (0.0)  E2 77/300 (25.7)
+   detailed/constraint latch 1/224 (0.4)  E2 68/300 (22.7)
+   detailed/cot        latch 0/218 (0.0)  E2 82/300 (27.3)
+  latch detailed zero vs constraint: 0/231 vs 1/224 p=0.492
+  per-level pass@1 by config (Model B):
+   brief   /zero       L1 61 L2 39 L3 2
+   brief   /few        L1 43 L2 28 L3 6
+   brief   /constraint L1 66 L2 42 L3 2
+   brief   /cot        L1 33 L2 22 L3 10
+   detailed/zero       L1 62 L2 79 L3 12
+   detailed/few        L1 65 L2 81 L3 13
+   detailed/constraint L1 66 L2 75 L3 10
+   detailed/cot        L1 60 L2 67 L3 14
+==============================================================================
+T9. repair convergence (main config)
+  Model A: all 69.0 → 78.7 → 79.0 → 79.0   L3 37.0 → 39.0 → 39.0 → 39.0   L1 86.0 → 100.0 → 100.0 → 100.0   L2 84.0 → 97.0 → 98.0 → 98.0
+  Model B: all 51.0 → 66.3 → 70.3 → 72.0   L3 12.0 → 19.0 → 24.0 → 26.0   L1 62.0 → 85.0 → 89.0 → 92.0   L2 79.0 → 95.0 → 98.0 → 98.0
+  Model C: all 63.3 → 75.3 → 77.3 → 77.7   L3 35.0 → 46.0 → 48.0 → 49.0   L1 78.0 → 91.0 → 93.0 → 93.0   L2 77.0 → 89.0 → 91.0 → 91.0
+  Model D: all 36.7 → 47.3 → 50.3 → 51.0   L3 10.0 → 10.0 → 13.0 → 13.0   L1 44.0 → 62.0 → 68.0 → 70.0   L2 56.0 → 70.0 → 70.0 → 70.0
+  repair success by primary error (cloud pooled / model D), main config:
+   cloud: E1-6,9 local 5/14 (36%); E2 64/107 (60%); E7 25/83 (30%); E8 9/99 (9%); review 33/47 (70%)
+      per code: E2 64/107; E4 0/1; E5 5/13; E7 25/83; E8 9/99; review 33/47
+   D: E1-6,9 local 3/17 (18%); E2 28/86 (33%); E7 0/14 (0%); E8 0/36 (0%); review 12/37 (32%)
+      per code: E2 28/86; E4 2/3; E5 1/14; E7 0/14; E8 0/36; review 12/37
+  final (post-repair) pass by level, main config:
+   Model A: L1 100.0 L2 98.0 L3 39.0  all 79.0
+   Model B: L1 92.0 L2 98.0 L3 26.0  all 72.0
+   Model C: L1 93.0 L2 91.0 L3 49.0  all 77.7
+   Model D: L1 70.0 L2 70.0 L3 13.0  all 51.0
+==============================================================================
+T10. resources vs Vivado golden reference (final passed samples, main config)
+  sync_fifo       ref LUT/FF/Fmax = 20/21/249  n=18  median ratio LUT 1.02 FF 1.00 Fmax 1.12
+                  LUT ratio range 1.00–3.30; by model n: Counter({'Model C': 8, 'Model A': 5, 'Model B': 5})
+  uart            ref LUT/FF/Fmax = 56/70/248  n=9  median ratio LUT 1.25 FF 0.94 Fmax 1.00
+                  LUT ratio range 1.16–1.39; by model n: Counter({'Model C': 5, 'Model A': 3, 'Model B': 1})
+  spi_master      ref LUT/FF/Fmax = 29/47/247  n=10  median ratio LUT 0.98 FF 0.83 Fmax 1.21
+                  LUT ratio range 0.76–2.03; by model n: Counter({'Model C': 7, 'Model B': 2, 'Model A': 1})
+  spi_slave       ref LUT/FF/Fmax = 13/35/339  n=2  median ratio LUT 1.35 FF 1.00 Fmax 1.03
+                  LUT ratio range 1.23–1.46; by model n: Counter({'Model B': 1, 'Model C': 1})
+  ps2_rx          ref LUT/FF/Fmax = 39/44/246  n=11  median ratio LUT 0.77 FF 0.84 Fmax 1.08
+                  LUT ratio range 0.54–0.97; by model n: Counter({'Model A': 7, 'Model C': 3, 'Model B': 1})
+  axi_lite_slave  ref LUT/FF/Fmax = 96/177/313  n=13  median ratio LUT 0.57 FF 1.04 Fmax 0.90
+                  LUT ratio range 0.15–1.01; by model n: Counter({'Model C': 8, 'Model A': 4, 'Model B': 1})
+  simple_dma      ref LUT/FF/Fmax = 40/46/235  n=3  median ratio LUT 1.30 FF 0.98 Fmax 0.97
+                  LUT ratio range 0.97–1.35; by model n: Counter({'Model B': 3})
+  i2c_master      ref LUT/FF/Fmax = 58/62/229  n=2  median ratio LUT 0.91 FF 0.89 Fmax 1.13
+                  LUT ratio range 0.83–1.00; by model n: Counter({'Model A': 2})
+  vga_timing      ref LUT/FF/Fmax = 41/20/264  n=29  median ratio LUT 0.68 FF 2.15 Fmax 1.04
+                  LUT ratio range 0.63–1.00; by model n: Counter({'Model A': 10, 'Model B': 10, 'Model C': 9})
+  rv32_datapath   ref LUT/FF/Fmax = 1293/1025/112  n=17  median ratio LUT 1.33 FF 1.00 Fmax 0.91
+                  LUT ratio range 1.14–1.53; by model n: Counter({'Model C': 8, 'Model A': 7, 'Model B': 2})
+  cloud pooled by level (median ratios):
+   L1: LUT 1.00 (n=285)
+   L2: LUT 1.00 (n=287) FF 1.00 (n=287) Fmax_MHz 1.00 (n=287)
+   L3: LUT 1.00 (n=114) FF 1.00 (n=114) Fmax_MHz 1.04 (n=114)
+==============================================================================
+Case study candidates: Model B sync_fifo (main config) failing round 0, passing after repair
+  idx=0 stage0=simulation errs=['E7'] final_pass=False rounds=4 final LUT/FF=None/None
+      TB_FAIL tag=func case=30 exp=f4 got=1b
+      TB_FAIL tag=func case=31 exp=e5 got=1b
+      TB_FAIL tag=func case=32 exp=b0 got=1b
+  idx=3 stage0=compile errs=['E2'] final_pass=False rounds=4 final LUT/FF=None/None
+      %Error: C:\Users\XIXIBE~1\AppData\Local\Temp\vleval_sync_fifo_m1x5_tsw\dut.v:34:13: syntax error, unexpected wire
+   34 |             wire rd_accepted
+  idx=1 stage0=simulation errs=['E8'] final_pass=False rounds=4 final LUT/FF=19/23
+      TB_FAIL tag=proto case=4 exp=0 got=1
+      TB_FAIL tag=proto case=21 exp=1 got=0
+      TB_FAIL tag=proto case=22 exp=10 got=11
+  idx=2 stage0=compile errs=['E2'] final_pass=True rounds=4 final LUT/FF=20/21
+               C:\Users\XIXIBE~1\AppData\Local\Temp\vleval_sync_fifo_kj107pjt\dut.v:18:16:      Example path: ASSIGNW
+                    C:\Users\XIXIBE~1\
+  idx=5 stage0=compile errs=['E2'] final_pass=False rounds=4 final LUT/FF=19/23
+      _y38fvp9c\dut.v:65:9: ... Location of blocking assignment (bits [0:0])
+   65 |         empty = (count == 0);
+      |         ^~~~~
+                   
+  idx=7 stage0=simulation errs=['E8'] final_pass=True rounds=2 final LUT/FF=21/23
+      TB_FAIL tag=proto case=30 exp=0 got=1
+      TB_FAIL tag=proto case=31 exp=f got=e
+      TB_FAIL tag=proto case=32 exp=f got=e
+  idx=8 stage0=compile errs=['E2'] final_pass=True rounds=3 final LUT/FF=20/21
+      c_fifo_w7tq_4mt\dut.v:69:11: ... Location of blocking assignment (bits [0:0])
+   69 |     empty = (count == 0);
+      |           ^
+                  
+  idx=6 stage0=compile errs=['E2'] final_pass=False rounds=4 final LUT/FF=19/23
+      o_57onqb3d\dut.v:74:9: ... Location of blocking assignment (bits [0:0])
+   74 |         empty = (count == 0);
+      |         ^~~~~
+                  
+  idx=4 stage0=simulation errs=['E8'] final_pass=True rounds=4 final LUT/FF=23/23
+      TB_FAIL tag=proto case=4 exp=0 got=1
+      TB_FAIL tag=proto case=21 exp=1 got=0
+      TB_FAIL tag=proto case=22 exp=10 got=11
+  idx=9 stage0=compile errs=['E2'] final_pass=True rounds=3 final LUT/FF=20/21
+         ^~~~~
+                   C:\Users\XIXIBE~1\AppData\Local\Temp\vleval_sync_fifo_s5e1f6bz\dut.v:45:9: ... Location of nonblocking assignment (bits [0
+  passing sync_fifo samples LUT (cloud, main): [20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 22, 22, 23, 23, 24, 66, 66, 66]
+wrote data/report/paper_data.json and data/report/paper_stats.txt

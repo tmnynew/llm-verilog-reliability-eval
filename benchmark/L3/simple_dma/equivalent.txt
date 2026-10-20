@@ -1,0 +1,1 @@
+m020  reviewer-A  DDL unreachable default branch removed: state is a 2-bit register that only ever holds IDLE/RD/WR; the default arm (state 3) is never executed.

@@ -1,0 +1,21 @@
+{
+  "id": "spi_master",
+  "level": "L3",
+  "title": "SPI 主机",
+  "tags": [
+    "system",
+    "protocol",
+    "fsm",
+    "serial"
+  ],
+  "testbench_type": "transaction",
+  "allowed_latency": 1,
+  "clock_port": "clk",
+  "reference_resources": {
+    "LUT": 29,
+    "FF": 47,
+    "Fmax_MHz": 247.09661477637758
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

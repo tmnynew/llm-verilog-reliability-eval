@@ -1,0 +1,28 @@
+# EDA tool configuration (paths are resolved through PATH unless absolute).
+verilator: verilator
+verilator_coverage: verilator_coverage
+iverilog: iverilog
+vvp: vvp
+yosys: yosys
+vivado: vivado
+
+# Functional simulation: verilator | iverilog | auto (auto prefers Verilator).
+# The paper's data was produced with Icarus Verilog 14 as the simulator and Verilator 5
+# as the linter / Verilog-2001 compile checker; the testbenches are validated against
+# both, but distro Verilator builds older than 5.03x may differ on the L3 bus models,
+# so Icarus is the pinned default.
+simulator: iverilog
+# Lint / compile check: verilator | iverilog | auto
+linter: verilator
+
+# Timeouts (seconds). Paper §2.3 ④: functional simulation 60 s.
+sim_timeout_s: 60
+compile_timeout_s: 120
+synth_timeout_s: 600
+
+# Synthesis. Vivado is the authoritative judge (paper §2.3 ⑤); Yosys is the
+# seconds-level pre-screen for the interactive student flow.
+enable_yosys: true
+enable_vivado: false          # set true (or pass --vivado) on a machine with Vivado
+fpga_part: xc7a35tcpg236-1    # Basys3
+clock_period_ns: 5.0          # 200 MHz tight constraint, Fmax = 1/(T - WNS)

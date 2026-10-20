@@ -1,0 +1,50 @@
+{
+  "module": "spi_slave",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "sclk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "cs_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "mosi",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "miso",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "tx_data",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "rx_data",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "rx_valid",
+      "direction": "output",
+      "width": 1
+    }
+  ]
+}

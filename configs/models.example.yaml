@@ -1,0 +1,45 @@
+# Copy to configs/models.yaml and fill in.  API keys are read from the named
+# environment variable – never commit keys.  `name` is the label used in reports
+# (anonymise, e.g. "Model A", before sharing data with students).
+#
+# The four entries below are the models named in paper §4.1 (Model A–D).
+# If you evaluate a different model / snapshot, update §4.1 of the manuscript.
+models:
+  # Model A – cloud general-purpose model (DeepSeek-V4-Pro, GA July 2026)
+  - name: Model A
+    model: deepseek-v4-pro
+    base_url: https://api.deepseek.com/v1
+    api_key_env: DEEPSEEK_API_KEY
+    temperature: 0.2
+    max_tokens: 8192
+    extra:
+      thinking:
+        type: disabled
+
+  # Model B – cloud code-specialised model (Qwen3-Coder-Plus, 2025-09-23 snapshot)
+  - name: Model B
+    model: qwen3-coder-plus-2025-09-23
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    api_key_env: DASHSCOPE_API_KEY
+    temperature: 0.2
+    max_tokens: 8192
+
+  # Model C – cloud general-purpose chat model (GLM-5, released Feb 2026)
+  - name: Model C
+    model: glm-5
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    api_key_env: ZHIPU_API_KEY
+    temperature: 0.2
+    max_tokens: 8192
+    extra:
+      thinking:
+        type: disabled
+
+  # Model D – local 7B open-weight model served by vLLM on a single RTX 4090 (paper §2.3)
+  - name: Model D
+    model: Qwen/Qwen2.5-Coder-7B-Instruct
+    base_url: http://127.0.0.1:8001/v1
+    api_key_env: LOCAL_API_KEY
+    temperature: 0.2
+    max_tokens: 8192
+    timeout_s: 300

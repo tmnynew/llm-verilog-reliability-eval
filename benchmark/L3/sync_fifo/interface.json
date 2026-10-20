@@ -1,0 +1,15 @@
+{
+  "module": "sync_fifo",
+  "parameters": {"DW": 8, "DEPTH": 16},
+  "ports": [
+    {"name": "clk",     "direction": "input",  "width": 1},
+    {"name": "rst_n",   "direction": "input",  "width": 1},
+    {"name": "wr_en",   "direction": "input",  "width": 1},
+    {"name": "wr_data", "direction": "input",  "width": 8},
+    {"name": "rd_en",   "direction": "input",  "width": 1},
+    {"name": "rd_data", "direction": "output", "width": 8},
+    {"name": "full",    "direction": "output", "width": 1},
+    {"name": "empty",   "direction": "output", "width": 1},
+    {"name": "count",   "direction": "output", "width": 5}
+  ]
+}

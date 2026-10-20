@@ -1,0 +1,6 @@
+m005  reviewer-A  SDL reset of rsh removed: all 8 bits of rsh are sampled during the read phase before rsh is copied to rdata.
+m006  reviewer-A  CRP idle phase 0 -> 1: the START sequence skips its (empty) phase 0, so the transaction begins one quarter period earlier; SDA-low-to-SCL-low hold, all SCL periods and the bit sequence are unchanged and the spec fixes no idle-to-START setup time.
+m009  reviewer-A  BSR phase <= phase+1 -> blocking: every phase action executes one tick earlier by a constant offset, i.e. the same waveform shifted by one quarter period (equivalent to m006).
+m010  reviewer-A  DDL empty default arm removed from a case that already lists every reachable phase: no behavioural change.
+m014  reviewer-A  DDL empty default arm removed (same as m010).
+m020  reviewer-A  DDL unreachable default state removed: state only takes values S_IDLE..S_STOP.

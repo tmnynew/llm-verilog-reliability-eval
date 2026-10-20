@@ -1,0 +1,114 @@
+[
+  {
+    "id": "m001",
+    "op": "WID",
+    "line": 10,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 10: '3' -> '2'"
+  },
+  {
+    "id": "m002",
+    "op": "WID",
+    "line": 10,
+    "original": "3",
+    "replacement": "2",
+    "description": "WID line 10: '3' -> '2'"
+  },
+  {
+    "id": "m003",
+    "op": "WID",
+    "line": 10,
+    "original": "2",
+    "replacement": "1",
+    "description": "WID line 10: '2' -> '1'"
+  },
+  {
+    "id": "m004",
+    "op": "UOI",
+    "line": 13,
+    "original": "(!rst_n)",
+    "replacement": "(!(!rst_n))",
+    "description": "UOI line 13: '(!rst_n)' -> '(!(!rst_n))'"
+  },
+  {
+    "id": "m005",
+    "op": "RST",
+    "line": 13,
+    "original": "!",
+    "replacement": "",
+    "description": "RST line 13: '!' -> ''"
+  },
+  {
+    "id": "m006",
+    "op": "SDL",
+    "line": 14,
+    "original": "q    <= 4'b0001;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 14: \"q    <= 4'b0001;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m007",
+    "op": "CRP",
+    "line": 14,
+    "original": "4'b0001",
+    "replacement": "4'b0",
+    "description": "CRP line 14: \"4'b0001\" -> \"4'b0\""
+  },
+  {
+    "id": "m008",
+    "op": "SDL",
+    "line": 15,
+    "original": "wrap <= 1'b0;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 15: \"wrap <= 1'b0;\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m009",
+    "op": "CRP",
+    "line": 15,
+    "original": "1'b0",
+    "replacement": "1'b1",
+    "description": "CRP line 15: \"1'b0\" -> \"1'b1\""
+  },
+  {
+    "id": "m010",
+    "op": "SDL",
+    "line": 17,
+    "original": "q    <= q_next;",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 17: 'q    <= q_next;' -> '/* statement removed */'"
+  },
+  {
+    "id": "m011",
+    "op": "SDL",
+    "line": 18,
+    "original": "wrap <= en && (q_next == 4'b0001);",
+    "replacement": "/* statement removed */",
+    "description": "SDL line 18: \"wrap <= en && (q_next == 4'b0001);\" -> '/* statement removed */'"
+  },
+  {
+    "id": "m012",
+    "op": "LOR",
+    "line": 18,
+    "original": "&&",
+    "replacement": "||",
+    "description": "LOR line 18: '&&' -> '||'"
+  },
+  {
+    "id": "m013",
+    "op": "ROR",
+    "line": 18,
+    "original": "==",
+    "replacement": "!=",
+    "description": "ROR line 18: '==' -> '!='"
+  },
+  {
+    "id": "m014",
+    "op": "CRP",
+    "line": 18,
+    "original": "4'b0001",
+    "replacement": "4'b0",
+    "description": "CRP line 18: \"4'b0001\" -> \"4'b0\""
+  }
+]

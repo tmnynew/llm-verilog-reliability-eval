@@ -1,0 +1,105 @@
+[
+  {
+    "file": "e01.v",
+    "sample_id": 1952,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "few",
+    "idx": 2,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=14 exp=2 got=3",
+      "TB_FAIL tag=proto case=17 exp=0 got=2",
+      "TB_FAIL tag=proto case=24 exp=1 got=2"
+    ]
+  },
+  {
+    "file": "e02.v",
+    "sample_id": 1940,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "zero",
+    "idx": 1,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=33 exp=1 got=0"
+    ]
+  },
+  {
+    "file": "e03.v",
+    "sample_id": 1969,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "constraint",
+    "idx": 9,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=timing case=12 exp=0 got=1",
+      "TB_FAIL tag=proto case=13 exp=1 got=0",
+      "TB_FAIL tag=proto case=14 exp=2 got=9"
+    ]
+  },
+  {
+    "file": "e04.v",
+    "sample_id": 1978,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "cot",
+    "idx": 8,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=timing case=32 exp=0 got=1",
+      "TB_FAIL tag=proto case=33 exp=1 got=0",
+      "TB_FAIL tag=proto case=34 exp=0 got=5"
+    ]
+  },
+  {
+    "file": "e05.v",
+    "sample_id": 1946,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "zero",
+    "idx": 8,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=timing case=32 exp=0 got=1",
+      "TB_FAIL tag=proto case=33 exp=1 got=0",
+      "TB_FAIL tag=proto case=34 exp=0 got=5"
+    ]
+  },
+  {
+    "file": "e06.v",
+    "sample_id": 1956,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "few",
+    "idx": 6,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=14 exp=2 got=3",
+      "TB_FAIL tag=proto case=17 exp=0 got=2",
+      "TB_FAIL tag=proto case=24 exp=1 got=2"
+    ]
+  },
+  {
+    "file": "e07.v",
+    "sample_id": 1951,
+    "model": "Model B",
+    "spec_version": "brief",
+    "strategy": "few",
+    "idx": 1,
+    "round": 0,
+    "full_tb_primary_error": "E8",
+    "full_tb_failed_cases": [
+      "TB_FAIL tag=proto case=14 exp=2 got=4",
+      "TB_FAIL tag=proto case=17 exp=0 got=3",
+      "TB_FAIL tag=proto case=24 exp=1 got=2"
+    ]
+  }
+]

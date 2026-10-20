@@ -1,0 +1,19 @@
+{
+  "id": "comparator4",
+  "level": "L1",
+  "title": "4 位比较器",
+  "tags": [
+    "combinational",
+    "compare",
+    "width"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 6,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}

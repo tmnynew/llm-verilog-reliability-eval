@@ -1,0 +1,4 @@
+# Mutants confirmed equivalent by manual review (excluded from the mutation score).
+# format: <mutant id>  <reviewer>  <reason>
+m005  reviewer-A  SDL of the defensive default assignment `next_state = S0` before the case: every case arm (incl. default) assigns next_state, so the removed statement is dead.
+m010  reviewer-A  DDL: the 2-bit state register enumerates all four states, so the default arm is unreachable in simulation.

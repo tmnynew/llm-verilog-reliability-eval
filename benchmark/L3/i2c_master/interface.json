@@ -1,0 +1,73 @@
+{
+  "module": "i2c_master",
+  "parameters": {
+    "CLK_DIV": 4
+  },
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_n",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "start",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rw",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "addr",
+      "direction": "input",
+      "width": 7
+    },
+    {
+      "name": "wdata",
+      "direction": "input",
+      "width": 8
+    },
+    {
+      "name": "rdata",
+      "direction": "output",
+      "width": 8
+    },
+    {
+      "name": "busy",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "done",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "ack_err",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "scl_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "sda_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "sda_i",
+      "direction": "input",
+      "width": 1
+    }
+  ]
+}

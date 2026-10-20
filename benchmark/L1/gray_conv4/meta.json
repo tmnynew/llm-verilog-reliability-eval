@@ -1,0 +1,19 @@
+{
+  "id": "gray_conv4",
+  "level": "L1",
+  "title": "格雷码转换",
+  "tags": [
+    "combinational",
+    "gray",
+    "encoding"
+  ],
+  "testbench_type": "exhaustive",
+  "allowed_latency": 0,
+  "clock_port": null,
+  "reference_resources": {
+    "LUT": 3,
+    "FF": 0
+  },
+  "status": "ready",
+  "reference_tool": "vivado"
+}
