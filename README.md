@@ -83,6 +83,7 @@ vleval report --db results/results.db --out results/report               # → t
 benchmark/            题库（manifest.yaml 列出全部 30 题及实现状态）
 configs/              工具与模型配置（models.yaml 不入库）
 data/                 论文评测数据快照：4 模型 3 300 样本、7 715 条判定（见 data/README.md）
+docs/                 架构、题目格式、实现进度
 tests/                pytest（纯 Python 单元测试 + 需要 EDA 工具的集成测试）
 vleval/               平台源代码
 .github/workflows/    CI：单元测试、golden 校验、变异得分

@@ -29,5 +29,4 @@ vivado*.backup.*
 
 # Paper figures, design notes and one-off analysis scripts are kept locally only
 figures/
-docs/
 scripts/
