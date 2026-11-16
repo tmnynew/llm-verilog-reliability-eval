@@ -209,18 +209,39 @@ def cmd_run(args) -> int:
 
 
 def cmd_report(args) -> int:
-    from .db import ResultStore
-    from .report import Report
+    from .report import Rejudge, Report
 
     bench = _bench(args)
-    store = ResultStore(Path(args.db))
-    rep = Report(store.samples(), bench)
+    store = None
+    if args.data:  # text release (samples.jsonl) instead of the SQLite database
+        from .export import load_samples
+
+        samples = load_samples(Path(args.data))
+        rejudge_dir = Path(args.rejudge) if args.rejudge else Path(args.data) / "rejudge"
+    else:
+        from .db import ResultStore
+
+        store = ResultStore(Path(args.db))
+        samples = store.samples()
+        rejudge_dir = Path(args.rejudge) if args.rejudge else None
+    pool = [m.strip() for m in args.pool.split(",")] if args.pool else None
+    rep = Report(samples, bench, rejudge=Rejudge(rejudge_dir) if rejudge_dir else None, pool=pool)
     rep.build()
-    rep.write(Path(args.out))
-    k = rep.kappa(store.annotations())
+    rep.write(Path(args.out), figures=not args.no_figures)
     print((Path(args.out) / "tables.md").read_text(encoding="utf-8"))
+    k = rep.kappa(store.annotations()) if store is not None else None
     if k is not None:
         print(f"\nCohen's kappa (two raters): {k:.3f}")
+    return 0
+
+
+def cmd_reclassify(args) -> int:
+    from .db import ResultStore
+
+    changed = ResultStore(Path(args.db)).reclassify(dry_run=args.dry_run)
+    print(f"{'would change' if args.dry_run else 'changed'} {sum(changed.values())} verdict(s)")
+    for (old, new), n in sorted(changed.items(), key=lambda kv: -kv[1]):
+        print(f"  primary {old or 'none'} → {new or 'none'}: {n}")
     return 0
 
 
@@ -343,10 +364,19 @@ def build_parser() -> argparse.ArgumentParser:
     sel(p)
     p.set_defaults(fn=cmd_run)
 
-    p = sub.add_parser("report", help="build tables/figures from a results DB")
+    p = sub.add_parser("report", help="build the paper's tables/figures from a results DB or from an exported dataset")
     p.add_argument("--db", default="results/results.db")
+    p.add_argument("--data", help="exported dataset directory (reads samples.jsonl instead of --db), e.g. data")
+    p.add_argument("--rejudge", help="directory with the re-judging CSVs (default: <data>/rejudge when --data is given)")
+    p.add_argument("--pool", help="comma list of models reported together in the repair / resource tables, e.g. \"Model A,Model B,Model C\"")
+    p.add_argument("--no-figures", action="store_true", help="tables only")
     p.add_argument("--out", default="results/report")
     p.set_defaults(fn=cmd_report)
+
+    p = sub.add_parser("reclassify", help="re-apply the current taxonomy rules to stored verdicts (in place; back up the DB first)")
+    p.add_argument("--db", default="results/results.db")
+    p.add_argument("--dry-run", action="store_true", help="only print what would change")
+    p.set_defaults(fn=cmd_reclassify)
 
     p = sub.add_parser("export", help="export a results DB as a text dataset (JSONL + CSV, local paths redacted)")
     p.add_argument("--db", default="results/results.db")
@@ -359,7 +389,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--db", default="results/results.db")
     p.add_argument("sample_id", type=int)
     p.add_argument("rater")
-    p.add_argument("code", help="E1..E9 or NONE")
+    p.add_argument("code", help="E1..E10 or NONE")
     p.add_argument("--note")
     p.set_defaults(fn=cmd_annotate)
 

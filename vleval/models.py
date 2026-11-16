@@ -50,7 +50,7 @@ class Stage(str, enum.Enum):
 
 
 class ErrorCode(str, enum.Enum):
-    """Nine-category taxonomy (paper Table 3)."""
+    """Ten-category taxonomy (paper Table 2)."""
 
     E1_INTERFACE = "E1"
     E2_LANGUAGE_SUBSET = "E2"
@@ -61,6 +61,7 @@ class ErrorCode(str, enum.Enum):
     E7_FSM = "E7"
     E8_PROTOCOL = "E8"
     E9_SIM_ONLY_CONSTRUCT = "E9"
+    E10_GENERAL_FUNCTIONAL = "E10"
 
     @property
     def stage(self) -> Stage:
@@ -79,6 +80,7 @@ _ERROR_STAGE = {
     ErrorCode.E5_WIDTH: Stage.SIMULATION,
     ErrorCode.E7_FSM: Stage.SIMULATION,
     ErrorCode.E8_PROTOCOL: Stage.SIMULATION,
+    ErrorCode.E10_GENERAL_FUNCTIONAL: Stage.SIMULATION,
     ErrorCode.E6_LATCH: Stage.SYNTHESIS,
     ErrorCode.E9_SIM_ONLY_CONSTRUCT: Stage.SYNTHESIS,
 }
@@ -89,9 +91,10 @@ _ERROR_LABEL = {
     ErrorCode.E4_RESET: "复位错误",
     ErrorCode.E5_WIDTH: "位宽与截断",
     ErrorCode.E6_LATCH: "意外锁存器",
-    ErrorCode.E7_FSM: "状态机错误",
+    ErrorCode.E7_FSM: "状态机与时序错误",
     ErrorCode.E8_PROTOCOL: "协议错误",
     ErrorCode.E9_SIM_ONLY_CONSTRUCT: "仿真专用结构",
+    ErrorCode.E10_GENERAL_FUNCTIONAL: "一般功能逻辑错误",
 }
 
 #: Lint categories that count as *functionally relevant* (paper Table 1).
@@ -262,6 +265,7 @@ class Sample:
     model_version: str = ""
     created_at: str = ""
     temperature: float = 0.2
+    sample_id: int | None = None  # primary key in the result store / data release (None before the sample is stored)
 
     @property
     def initial(self) -> Verdict:

@@ -41,7 +41,9 @@ REDACTION_RULES: list[tuple[re.Pattern[str], str, str]] = [
         "workspace checkout of this repository",
     ),
     (
-        re.compile(rf"(?:[A-Za-z]:)?{_SEP}(?:Users{_SEP}{_NAME}{_SEP})?(?:AppData{_SEP})?Local{_SEP}Temp{_SEP}vleval_{_NAME}", re.I),
+        # Tool messages are stored truncated, so the head of the path may be cut anywhere ("Users\\name\\AppData...",
+        # "name\\AppData...", "\\Local\\Temp..."): the component in front of AppData is the account name and goes too.
+        re.compile(rf"(?:[A-Za-z]:)?(?:{_SEP})?(?:Users{_SEP})?(?:{_NAME}{_SEP})?(?:AppData{_SEP})?Local{_SEP}Temp{_SEP}vleval_{_NAME}", re.I),
         "<tmp>",
         "per-sample temporary working directory",
     ),
@@ -154,6 +156,56 @@ def _sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def load_samples(data_dir: Path) -> Iterator[Any]:
+    """Read ``samples.jsonl`` of an exported dataset back into :class:`vleval.models.Sample` objects.
+
+    Lets ``vleval report --data data`` rebuild the tables from the text release, without the SQLite
+    database.  Tool logs are not part of ``samples.jsonl`` and stay empty.
+    """
+    from .models import ErrorCode, Sample, SpecVersion, Stage, Strategy, Verdict
+
+    with open(Path(data_dir) / "samples.jsonl", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            d = json.loads(line)
+            s = Sample(
+                problem_id=d["problem_id"],
+                model=d["model"],
+                spec_version=SpecVersion(d["spec_version"]),
+                strategy=Strategy(d["strategy"]),
+                index=d["idx"],
+                prompt=d.get("prompt") or "",
+                raw_response=d.get("raw_response") or "",
+                code=d.get("code") or "",
+                model_version=d.get("model_version") or "",
+                created_at=d.get("created_at") or "",
+                temperature=d.get("temperature") or 0.2,
+                sample_id=d["sample_id"],
+            )
+            for r in d["rounds"]:
+                s.rounds.append(
+                    Verdict(
+                        stage=Stage(r["stage"]),
+                        passed=bool(r["passed"]),
+                        sim_passed=bool(r["sim_passed"]),
+                        synth_ok=bool(r["synthesizable"]),
+                        unintended_latch=bool(r["unintended_latch"]),
+                        errors=[ErrorCode(e) for e in r.get("errors") or []],
+                        primary_error=ErrorCode(r["primary_error"]) if r.get("primary_error") else None,
+                        lint_density=r.get("lint_density"),
+                        lint_counts=r.get("lint_counts") or {},
+                        failed_cases=r.get("failed_cases") or [],
+                        resources=r.get("resources") or {},
+                        tool_disagreement=bool(r.get("tool_disagreement")),
+                        tool_logs={"needs_review": str(bool(r.get("needs_review")))},
+                        code=r.get("code"),
+                        raw_response=r.get("raw_response"),
+                    )
+                )
+            yield s
 
 
 def export_dataset(

@@ -1,6 +1,6 @@
 {
   "source_db": "results.db",
-  "source_db_sha256": "9d0d24b769762f501da8aa06920ec42fca6c38cc7ccb65b265a661e6a9bae571",
+  "source_db_sha256": "21a522c03bf74d14c078ce404ce36cd55b9d9f588ac9b8fb7bdb74db8bbf8712",
   "samples": 3300,
   "verdicts": 7715,
   "models": [
@@ -45,10 +45,10 @@
   ],
   "residual_local_paths": 0,
   "files": {
-    "README.md": 8413,
-    "samples.csv": 487295,
-    "samples.jsonl": 29861775,
-    "tool_logs.jsonl": 12690200,
-    "verdicts.csv": 964595
+    "README.md": 12427,
+    "samples.csv": 488259,
+    "samples.jsonl": 29865947,
+    "tool_logs.jsonl": 12723523,
+    "verdicts.csv": 970803
   }
 }

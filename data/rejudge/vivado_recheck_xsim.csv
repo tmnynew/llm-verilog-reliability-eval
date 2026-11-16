@@ -1,0 +1,58 @@
+sample_id,model,level,problem_id,verilator_kind,icarus_compile,icarus_sim_pass,vivado_latch,xsim_stage,xsim_pass,xsim_detail,golden_passes_xsim
+121,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+122,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+123,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+124,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+125,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+126,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+127,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+128,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+129,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+130,Model B,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+362,Model B,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2104,Model A,L1,priority_encoder8,duplicate_declaration,0,,0,sim,1,,1
+2143,Model A,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2144,Model A,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2147,Model A,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2148,Model A,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2149,Model A,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,1,,1
+2150,Model A,L1,cla_adder4,uncaptured,0,,0,sim,1,,1
+2193,Model A,L1,lzc8,duplicate_declaration,0,,0,sim,1,,1
+2199,Model A,L1,lzc8,duplicate_declaration,0,,0,sim,1,,1
+2200,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2201,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2202,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2203,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2204,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2206,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2207,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2208,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2209,Model A,L2,counter_param,duplicate_declaration,0,,0,sim,1,,1
+2386,Model A,L3,simple_dma,verilator_unsupported_blkandnblk,1,0,1,sim,0,TB_FAIL tag=func case=18 exp=0 got=2,1
+2407,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2408,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2411,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2412,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2413,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2416,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2417,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2420,Model D,L1,seg7_decoder,duplicate_declaration,0,,0,sim,1,,1
+2442,Model D,L1,barrel_shifter8,duplicate_declaration,0,,0,sim,0,TB_FAIL tag=func case=513 exp=4 got=8,1
+2444,Model D,L1,barrel_shifter8,other_verilator_error,0,,1,sim,0,TB_FAIL tag=func case=1 exp=1 got=xX,1
+2447,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2452,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2453,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2457,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2458,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2460,Model D,L1,cla_adder4,uncaptured,0,,0,sim,0,TB_FAIL tag=func case=x exp=0 got=x,1
+2609,Model D,L3,uart,duplicate_declaration,0,,0,sim,0,TB_FAIL tag=proto case=6501 exp=0 got=1,1
+3272,Model C,L3,ps2_rx,uncaptured,0,,0,sim,0,TB_FAIL tag=proto case=11 exp=1 got=0,1
+3502,Model C,L3,ps2_rx,verilator_unsupported_blkandnblk,1,0,1,sim,0,TB_FAIL tag=proto case=11 exp=1 got=0,1
+4081,Model B,L3,sync_fifo,other_verilator_error,1,0,0,sim,0,,1
+4082,Model B,L3,sync_fifo,verilator_unsupported_blkandnblk,1,1,0,sim,1,,1
+4084,Model B,L3,sync_fifo,verilator_unsupported_blkandnblk,1,1,0,sim,1,,1
+4085,Model B,L3,sync_fifo,verilator_unsupported_blkandnblk,1,1,0,sim,1,,1
+4088,Model B,L3,sync_fifo,verilator_unsupported_blkandnblk,1,0,0,sim,0,TB_FAIL tag=proto case=50 exp=1 got=0,1
+4271,Model B,L3,axi_lite_slave,uncaptured,0,,0,sim,1,,1
+4322,Model D,L2,pwm_gen,duplicate_declaration,0,,0,sim,1,,1
+4338,Model D,L2,ring_counter,uncaptured,0,,0,sim,0,TB_FAIL tag=timing case=1 exp=1 got=0,1

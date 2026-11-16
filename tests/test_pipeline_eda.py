@@ -56,7 +56,7 @@ def test_oracle_run_and_report(bench, tmp_path: Path, judge):
     assert Runner(GoldenOracleClient(bench), judge, store).run(plan).skipped == 4
     rep = Report(store.samples(), bench)
     tables = rep.build()
-    assert "oracle" in tables["T5_passk"] and "| oracle | L1 | 2 | 100.0 |" in tables["T5_passk"]
+    assert "| oracle | L1 | 1 | 2 | 100.0 |" in tables["T4_passk"] and "| oracle | L2 | 1 | 2 | 100.0 |" in tables["T4_passk"]
     rep.write(tmp_path / "out")
     assert (tmp_path / "out" / "tables.md").exists()
     assert store.export_jsonl(tmp_path / "s.jsonl") == 4

@@ -52,7 +52,7 @@ benchmark/<level>/<id>/
 | id | str | 与目录名一致 |
 | level | `L1`/`L2`/`L3` | 层级 |
 | title | str | 中文题名 |
-| tags | list | 用于错误分类的兜底证据：`fsm`（无标签功能失败 → E7）、`protocol`（→ E8），以及教学标签 `reset`/`width`/`default-branch` 等 |
+| tags | list | 教学标签：`fsm`、`protocol`、`reset`、`width`、`default-branch` 等，用于选题与统计；不参与错误分类（分类只看测试台失败标签与工具证据） |
 | testbench_type | `exhaustive`/`cycle`/`transaction` | 比对策略 |
 | allowed_latency | int | 规范中声明的允许输出延迟（周期） |
 | clock_port | str/null | 时钟端口名，Vivado 用于施加时序约束；组合逻辑为 null |

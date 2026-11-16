@@ -22,6 +22,14 @@ def test_redact_workspace_home_tmp_and_tools():
     assert residual_paths(out) == []
 
 
+def test_redact_removes_account_name_from_truncated_temp_paths():
+    # stored tool messages are cut on the left, so the path may start in the middle (8.3 short names included)
+    for head in (r"SOMEON~1\AppData", r"Users\SOMEON~1\AppData", r"C:\Users\SOMEON~1\AppData", r"ON~1\AppData", r"\AppData"):
+        out = redact_text(head + r"\Local\Temp\vleval_fifo_x9\dut.v:15:17: Procedural assignment to wire")
+        assert out == r"<tmp>\dut.v:15:17: Procedural assignment to wire", (head, out)
+    assert redact_text(r"error in Local\Temp\vleval_a1\dut.v") == r"error in <tmp>\dut.v"
+
+
 def test_redact_handles_json_escaped_backslashes_and_forward_slashes():
     out = redact_text(json.dumps({"p": r"D:\lab_file6\verilog-llm-evalab\x.v"}) + " D:/lab_file6/verilog-llm-evalab/y.v")
     assert "lab_file6" not in out and out.count("<repo>") == 2

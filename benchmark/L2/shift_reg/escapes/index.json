@@ -7,7 +7,7 @@
     "strategy": "zero",
     "idx": 3,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=1",
       "TB_FAIL tag=func case=100023 exp=1 got=0",
@@ -22,7 +22,7 @@
     "strategy": "cot",
     "idx": 3,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=x",
       "TB_FAIL tag=func case=100005 exp=0 got=x",
@@ -37,7 +37,7 @@
     "strategy": "zero",
     "idx": 2,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100005 exp=0 got=z",
       "TB_FAIL tag=func case=100006 exp=0 got=z",
@@ -52,7 +52,7 @@
     "strategy": "few",
     "idx": 2,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100005 exp=0 got=x",
       "TB_FAIL tag=func case=100006 exp=0 got=x",
@@ -67,7 +67,7 @@
     "strategy": "zero",
     "idx": 5,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100005 exp=0 got=x",
       "TB_FAIL tag=func case=100006 exp=0 got=x",
@@ -82,7 +82,7 @@
     "strategy": "constraint",
     "idx": 9,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=x",
       "TB_FAIL tag=func case=100005 exp=0 got=x",
@@ -97,7 +97,7 @@
     "strategy": "constraint",
     "idx": 8,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=x",
       "TB_FAIL tag=func case=100005 exp=0 got=x",
@@ -112,7 +112,7 @@
     "strategy": "constraint",
     "idx": 1,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=1",
       "TB_FAIL tag=func case=100005 exp=0 got=1",
@@ -127,7 +127,7 @@
     "strategy": "zero",
     "idx": 7,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100004 exp=0 got=1",
       "TB_FAIL tag=func case=100005 exp=0 got=1",
@@ -142,7 +142,7 @@
     "strategy": "zero",
     "idx": 4,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=100005 exp=0 got=x",
       "TB_FAIL tag=func case=100006 exp=0 got=x",

@@ -7,7 +7,7 @@
     "strategy": "zero",
     "idx": 4,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=204 exp=600000 got=400000",
       "TB_FAIL tag=func case=205 exp=600000 got=400000",
@@ -22,7 +22,7 @@
     "strategy": "cot",
     "idx": 0,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=44 exp=600000 got=600001",
       "TB_FAIL tag=func case=45 exp=600000 got=600001",
@@ -52,7 +52,7 @@
     "strategy": "few",
     "idx": 1,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=19 exp=600000 got=604000",
       "TB_FAIL tag=func case=20 exp=600000 got=604400",
@@ -67,7 +67,7 @@
     "strategy": "constraint",
     "idx": 1,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=19 exp=600000 got=604000",
       "TB_FAIL tag=func case=20 exp=600000 got=604400",
@@ -82,7 +82,7 @@
     "strategy": "constraint",
     "idx": 6,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=19 exp=600000 got=604000",
       "TB_FAIL tag=func case=20 exp=600000 got=604400",
@@ -97,7 +97,7 @@
     "strategy": "few",
     "idx": 3,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=19 exp=600000 got=604000",
       "TB_FAIL tag=func case=20 exp=600000 got=604400",
@@ -127,7 +127,7 @@
     "strategy": "few",
     "idx": 7,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=19 exp=600000 got=604000",
       "TB_FAIL tag=func case=20 exp=600000 got=604400",

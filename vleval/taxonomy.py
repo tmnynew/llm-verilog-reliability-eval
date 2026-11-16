@@ -1,10 +1,12 @@
-"""Error taxonomy rules (paper Table 3 and §2.4).
+"""Error taxonomy rules (paper Table 2 and §2.4).
 
 The classifier is deliberately *evidence based*: every code it emits is tied
-to an observable produced by a tool or by the testbench.  When the evidence
-is insufficient the sample is flagged ``needs_review`` and the primary error
-is left ``None`` so that a teacher makes the final call (two-rater Kappa is
-computed on those decisions, see :mod:`vleval.stats`).
+to an observable produced by a tool or by the testbench.  A functional
+failure whose only evidence is "output differs from the reference" is put in
+E10 (general functional logic error) instead of being forced into a finer
+category; such samples are flagged ``needs_review`` because their finer
+attribution is left to a human reader (Experiment 1; two-rater Kappa, see
+:mod:`vleval.stats`).
 """
 
 from __future__ import annotations
@@ -12,6 +14,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from .models import ErrorCode, Level, Stage
+
+#: Bumped whenever the rules change, so that stored verdicts can be told apart (see ``vleval reclassify``).
+TAXONOMY_VERSION = 2
 
 #: Testbench failure tags (``TB_FAIL tag=<tag> ...``) → error code.
 TB_TAG_TO_CODE: dict[str, ErrorCode] = {
@@ -24,15 +29,25 @@ TB_TAG_TO_CODE: dict[str, ErrorCode] = {
 }
 
 #: Order used to pick the primary error inside the simulation stage
-#: ("事务级断言定位的类别优先").
+#: ("事务级断言定位的类别优先").  E10 is only emitted when nothing else is, and
+#: lint-only latch hints (E6 after E10) never become the primary error.
 _SIM_PRIORITY = [
     ErrorCode.E8_PROTOCOL,
     ErrorCode.E4_RESET,
     ErrorCode.E7_FSM,
     ErrorCode.E3_ASSIGNMENT_SEMANTICS,
     ErrorCode.E5_WIDTH,
-    ErrorCode.E6_LATCH,  # incomplete case/if that holds a stale value also breaks simulation
+    ErrorCode.E10_GENERAL_FUNCTIONAL,
+    ErrorCode.E6_LATCH,  # latch confirmed by the synthesis report on a sample that also fails simulation
 ]
+
+#: Rationale strings (also used by :func:`reclassify_stored` to recognise verdicts judged with older rules).
+WHY_E10 = "output mismatch without tag / lint / synthesis evidence → E10 (finer attribution left to review)"
+WHY_LATCH_SYNTH = "latch reported by synthesis on a sample that fails simulation"
+WHY_LATCH_LINT = "lint LATCH/CASEINCOMPLETE with failing simulation (secondary hint)"
+_V1_WHY_FALLBACK_E7 = "cycle-/transaction-level comparison failed on FSM or system-level problem (Table 3 E7)"
+_V1_WHY_NEEDS_REVIEW = "functional failure without taxonomy evidence – teacher review required"
+_V1_WHY_LATCH = "latch inferred / incomplete case with failing simulation"
 
 
 @dataclass
@@ -53,7 +68,7 @@ class Evidence:
     sim_only_hits: dict[str, int] = field(default_factory=dict)
     post_synth_mismatch: bool = False  # RTL sim passed but gate-level sim failed
     problem_level: Level = Level.L1
-    problem_tags: list[str] = field(default_factory=list)
+    problem_tags: list[str] = field(default_factory=list)  # recorded for reference; the rules never guess from the problem type
 
 
 @dataclass
@@ -95,24 +110,23 @@ def classify(ev: Evidence) -> Classification:
         if ev.lint_counts.get("WIDTH", 0):
             errors.append(ErrorCode.E5_WIDTH)
             why.append("lint WIDTH with failing simulation")
-        # Untagged functional failure on FSM / system-level problems: the cycle-level or
-        # transaction-level *comparison* failed, which Table 3 assigns to E7.  E8 is only
-        # emitted for protocol *assertions* (proto/handshake tags above); L1 exhaustive
-        # mismatches without further evidence stay unclassified (needs_review).
-        if not errors:
-            if "fsm" in ev.problem_tags or ev.problem_level == Level.L3:
-                errors.append(ErrorCode.E7_FSM)
-                why.append("cycle-/transaction-level comparison failed on FSM or system-level problem (Table 3 E7)")
-        # A latch inferred by synthesis, or LATCH/CASEINCOMPLETE reported by lint, explains a
-        # functional failure when nothing else does (stale value on the uncovered input).
-        if ev.unintended_latch or ev.lint_counts.get("LATCH", 0) or ev.lint_counts.get("CASEINCOMPLETE", 0):
+        # A latch found by the synthesis report is tool evidence in its own right (Table 2, E6).
+        if ev.unintended_latch:
             errors.append(ErrorCode.E6_LATCH)
-            why.append("latch inferred / incomplete case with failing simulation")
-        primary = next((c for c in _SIM_PRIORITY if c in errors), None)
-        needs_review = primary is None
-        if needs_review:
-            why.append("functional failure without taxonomy evidence – teacher review required")
-        return Classification(Stage.SIMULATION, _dedupe(errors), primary, needs_review, why)
+            why.append(WHY_LATCH_SYNTH)
+        # Nothing but "the output differs from the reference": E10 on every level.  No guess is made
+        # from the problem type (an untagged mismatch on an FSM problem is not necessarily an FSM bug).
+        if not errors:
+            errors.append(ErrorCode.E10_GENERAL_FUNCTIONAL)
+            why.append(WHY_E10)
+        # LATCH/CASEINCOMPLETE reported by lint alone is kept as a secondary hint only.
+        if not ev.unintended_latch and (ev.lint_counts.get("LATCH", 0) or ev.lint_counts.get("CASEINCOMPLETE", 0)):
+            errors.append(ErrorCode.E6_LATCH)
+            why.append(WHY_LATCH_LINT)
+        errors = _dedupe(errors)
+        primary = next(c for c in _SIM_PRIORITY if c in errors)
+        needs_review = primary == ErrorCode.E10_GENERAL_FUNCTIONAL
+        return Classification(Stage.SIMULATION, errors, primary, needs_review, why)
 
     # ---- stage 4: synthesis -------------------------------------------- #
     if not ev.synth_ok or ev.unintended_latch or ev.post_synth_mismatch:
@@ -121,7 +135,7 @@ def classify(ev: Evidence) -> Classification:
             why.append("synthesis inferred latch not required by spec")
         if (not ev.synth_ok and ev.sim_only_hits) or ev.post_synth_mismatch:
             errors.append(ErrorCode.E9_SIM_ONLY_CONSTRUCT)
-            why.append(f"simulation-only constructs {ev.sim_only_hits} caused synth error / post-synth mismatch")
+            why.append(f"simulation-only constructs {ev.sim_only_hits} with synthesis error")
         if not errors:
             why.append("synthesis error without taxonomy evidence – teacher review required")
             return Classification(Stage.SYNTHESIS, [], None, True, why)
@@ -137,3 +151,37 @@ def _dedupe(codes: list[ErrorCode]) -> list[ErrorCode]:
         if c not in seen:
             seen.append(c)
     return seen
+
+
+def reclassify_stored(stage: str, errors: list[str], primary: str | None, rationale: str,
+                      unintended_latch: bool) -> tuple[list[str], str | None, str, bool] | None:
+    """Bring a verdict judged with the version-1 rules to the current rules without re-running any tool.
+
+    Version 1 put an untagged functional failure in E7 when the problem was an FSM / system-level one and
+    left it unclassified otherwise; both are E10 now.  The stored rationale tells which rule fired, so the
+    conversion is exact.  Returns ``(errors, primary, rationale, needs_review)`` or ``None`` when the stored
+    verdict already follows the current rules.
+    """
+    if stage != Stage.SIMULATION.value:
+        return None
+    parts = [p for p in rationale.split("; ") if p]
+    fallback, unclassified = _V1_WHY_FALLBACK_E7 in parts, _V1_WHY_NEEDS_REVIEW in parts
+    if not (fallback or unclassified or _V1_WHY_LATCH in parts):
+        return None
+    codes = list(errors)
+    if fallback:  # the fallback only fired when no other code had been found, so this E7 carries no tag evidence
+        codes = [c for c in codes if c != ErrorCode.E7_FSM.value]
+    new_parts = [p for p in parts if p not in (_V1_WHY_FALLBACK_E7, _V1_WHY_NEEDS_REVIEW, _V1_WHY_LATCH)]
+    had_latch_code = ErrorCode.E6_LATCH.value in codes
+    codes = [c for c in codes if c != ErrorCode.E6_LATCH.value]
+    if had_latch_code and unintended_latch:
+        codes.append(ErrorCode.E6_LATCH.value)
+        new_parts.append(WHY_LATCH_SYNTH)
+    if not codes:
+        codes.append(ErrorCode.E10_GENERAL_FUNCTIONAL.value)
+        new_parts.append(WHY_E10)
+    if had_latch_code and not unintended_latch:
+        codes.append(ErrorCode.E6_LATCH.value)
+        new_parts.append(WHY_LATCH_LINT)
+    new_primary = next(c.value for c in _SIM_PRIORITY if c.value in codes)
+    return codes, new_primary, "; ".join(new_parts), new_primary == ErrorCode.E10_GENERAL_FUNCTIONAL.value

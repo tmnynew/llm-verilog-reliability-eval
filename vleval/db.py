@@ -131,6 +131,31 @@ class ResultStore:
                 )
         return int(sid)
 
+    def reclassify(self, dry_run: bool = False) -> dict[tuple[str | None, str | None], int]:
+        """Bring verdicts stored under older taxonomy rules to the current ones (no tool is re-run).
+
+        Returns ``{(old_primary, new_primary): count}`` of the verdicts that change.  The database is
+        modified in place unless *dry_run* is set – back it up first.
+        """
+        from .taxonomy import reclassify_stored
+
+        rows = self.conn.execute("SELECT sample_id, round, stage, primary_error, errors, unintended_latch, tool_logs FROM verdicts").fetchall()
+        changed: dict[tuple[str | None, str | None], int] = {}
+        updates = []
+        for sid, rnd, stage, primary, errors, latch, logs in rows:
+            tl = json.loads(logs or "{}")
+            new = reclassify_stored(stage, json.loads(errors or "[]"), primary, tl.get("rationale") or "", bool(latch))
+            if new is None:
+                continue
+            codes, new_primary, rationale, needs_review = new
+            tl["rationale"], tl["needs_review"] = rationale, str(needs_review)
+            updates.append((new_primary, json.dumps(codes), json.dumps(tl, ensure_ascii=False), sid, rnd))
+            changed[(primary, new_primary)] = changed.get((primary, new_primary), 0) + 1
+        if updates and not dry_run:
+            with self.conn:
+                self.conn.executemany("UPDATE verdicts SET primary_error=?, errors=?, tool_logs=? WHERE sample_id=? AND round=?", updates)
+        return changed
+
     def annotate(self, sample_id: int, rater: str, primary_error: str | None, note: str = "") -> None:
         with self.conn:
             self.conn.execute("INSERT OR REPLACE INTO annotations VALUES (?,?,?,?)", (sample_id, rater, primary_error, note))
@@ -152,6 +177,7 @@ class ResultStore:
                 model_version=row["model_version"] or "",
                 created_at=row["created_at"] or "",
                 temperature=row["temperature"] or 0.2,
+                sample_id=row["id"],
             )
             for v in self.conn.execute("SELECT * FROM verdicts WHERE sample_id=? ORDER BY round", (row["id"],)):
                 s.rounds.append(

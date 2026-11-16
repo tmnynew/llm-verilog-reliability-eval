@@ -1,13 +1,21 @@
-"""Statistics used in the paper: pass@k, Wilson CI, Fisher exact test, Cohen's kappa.
+"""Statistics used in the paper: pass@k, problem-clustered bootstrap CI, permutation tests, Cohen's kappa.
 
-Only the standard library is required; ``scipy`` is used for Fisher's test
-when available and a pure-Python hypergeometric fallback is used otherwise.
+The 10 samples of one problem are not independent, so the paper's intervals and tests take the
+*problem* as the unit of analysis (§1.2): :func:`cluster_bootstrap_ci` (needs ``numpy``,
+``pip install vleval[stats]``), :func:`paired_signflip_p` and :func:`two_sample_permutation_p`.
+The sample-level Wilson interval and Fisher test are kept for quick looks at a single problem;
+pooling samples across problems with them overstates significance.
 """
 
 from __future__ import annotations
 
+import itertools
 import math
 from collections.abc import Iterable, Sequence
+from fractions import Fraction
+
+#: Seed of the bootstrap used for the published confidence intervals.
+PAPER_SEED = 20261114
 
 
 def pass_at_k(n: int, c: int, k: int) -> float:
@@ -56,6 +64,64 @@ def _fisher_fallback(a: int, b: int, c: int, d: int) -> float:
     lo, hi = max(0, c1 - (n - r1)), min(r1, c1)
     p_obs = pmf(a)
     return min(1.0, sum(pmf(x) for x in range(lo, hi + 1) if pmf(x) <= p_obs * (1 + 1e-9)))
+
+
+def cluster_bootstrap_ci(problem_rates: Sequence[float], rng=None, n_resamples: int = 20000, level: float = 0.95) -> tuple[float, float]:
+    """Percentile bootstrap CI of the mean pass rate, resampling whole problems (needs ``numpy``).
+
+    *problem_rates* holds one pass rate per problem (passes / samples of that problem).  Pass one
+    ``numpy.random.default_rng(PAPER_SEED)`` generator through all calls of a report to reproduce
+    the published intervals (the calls are made model by model, level by level).
+    """
+    import numpy as np
+
+    r = np.asarray(problem_rates, float)
+    if r.size == 0:
+        return (0.0, 0.0)
+    rng = rng if rng is not None else np.random.default_rng(PAPER_SEED)
+    idx = rng.integers(0, len(r), size=(n_resamples, len(r)))
+    means = r[idx].mean(axis=1)
+    tail = 100 * (1 - level) / 2
+    return (float(np.percentile(means, tail)), float(np.percentile(means, 100 - tail)))
+
+
+def paired_signflip_p(diffs: Sequence[float | Fraction]) -> float:
+    """Two-sided paired permutation (sign-flip) test of "mean per-problem difference = 0", exact.
+
+    Under the null hypothesis the sign of every per-problem difference is arbitrary; the p-value is the
+    share of the 2^n sign patterns whose |sum| is at least the observed one.  Zero differences carry no
+    information and are dropped.  The sums are accumulated as exact fractions (pass rates are k/n), so
+    the full permutation distribution is obtained by dynamic programming instead of enumeration.
+    """
+    d = [x if isinstance(x, Fraction) else Fraction(x).limit_denominator(10**6) for x in diffs]
+    d = [x for x in d if x != 0]
+    if not d:
+        return 1.0
+    obs = abs(sum(d))
+    dist: dict[Fraction, int] = {Fraction(0): 1}
+    for x in d:
+        nxt: dict[Fraction, int] = {}
+        for total, ways in dist.items():
+            for t in (total + x, total - x):
+                nxt[t] = nxt.get(t, 0) + ways
+        dist = nxt
+    return sum(ways for total, ways in dist.items() if abs(total) >= obs) / 2 ** len(d)
+
+
+def two_sample_permutation_p(x: Sequence[float], y: Sequence[float]) -> float:
+    """Exact two-sided permutation test on the difference of means of two independent groups of problems."""
+    allv = [float(v) for v in x] + [float(v) for v in y]
+    n, k = len(allv), len(x)
+    if k == 0 or k == n:
+        return 1.0
+    tot = sum(allv)
+    obs = abs(sum(allv[:k]) / k - sum(allv[k:]) / (n - k))
+    ge = cnt = 0
+    for combo in itertools.combinations(allv, k):
+        sx = sum(combo)
+        ge += abs(sx / k - (tot - sx) / (n - k)) >= obs - 1e-12
+        cnt += 1
+    return ge / cnt
 
 
 def cohen_kappa(r1: Sequence[str], r2: Sequence[str]) -> float:

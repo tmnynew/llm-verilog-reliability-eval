@@ -22,7 +22,7 @@
     "strategy": "zero",
     "idx": 0,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=200 exp=a1 got=42",
       "TB_FAIL tag=func case=201 exp=6c got=d8",
@@ -110,7 +110,7 @@
     "strategy": "cot",
     "idx": 4,
     "round": 0,
-    "full_tb_primary_error": "E7",
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=17 exp=0 got=7f",
       "TB_FAIL tag=func case=27 exp=ff got=80",

@@ -22,7 +22,7 @@
     "strategy": "constraint",
     "idx": 8,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=5 exp=1 got=0",
       "TB_FAIL tag=func case=8 exp=2 got=1",
@@ -67,7 +67,7 @@
     "strategy": "cot",
     "idx": 3,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=278 exp=1 got=ff",
       "TB_FAIL tag=func case=279 exp=2 got=ff",
@@ -82,7 +82,7 @@
     "strategy": "constraint",
     "idx": 9,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=5 exp=1 got=0",
       "TB_FAIL tag=func case=8 exp=2 got=1",
@@ -112,7 +112,7 @@
     "strategy": "constraint",
     "idx": 1,
     "round": 0,
-    "full_tb_primary_error": null,
+    "full_tb_primary_error": "E10",
     "full_tb_failed_cases": [
       "TB_FAIL tag=func case=5 exp=1 got=0",
       "TB_FAIL tag=func case=8 exp=2 got=1",

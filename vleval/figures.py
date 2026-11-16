@@ -83,7 +83,8 @@ def fig_repair(report, out: Path) -> None:
         return
     fig, ax = plt.subplots(figsize=(5.5, 3.0), dpi=300)
     markers = ["o", "s", "^", "D"]
-    for i, (m, d) in enumerate(data.items()):
+    curves = {m: d for m, d in data.items() if "curve" in d}  # the pooled group only carries per-error counts
+    for i, (m, d) in enumerate(curves.items()):
         ax.plot(range(4), [100 * v for v in d["curve"]], marker=markers[i % 4], color=GRAYS[min(i, 2)], label=m, lw=1.2)
     ax.set_xticks(range(4))
     ax.set_xlabel("修复轮次")
